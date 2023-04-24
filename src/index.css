@@ -1,13 +1,257 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  font-family: "IBM Plex Serif", serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-wrapper {
+  display: flex;
+  padding: 10px 0px 0px 20px;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(255, 255, 255);
+  width: 100vw;
+  border-bottom: 1px solid rgba(237, 237, 237);
+}
+.dot {
+  color: red;
+}
+.nav-wrapper .nav-left {
+  font-weight: bold;
+  text-align: left;
+  width: auto;
+}
+.nav-right {
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.nav-right .nav_list {
+  display: flex;
+}
+.nav_list a {
+  text-decoration: none;
+}
+
+.headernav {
+  margin-right: 10px;
+  padding: 10px;
+  color: grey;
+  font-size: 17px;
+  font-weight: bolder;
+  font-family: "IBM Plex Serif", serif;
+  cursor: pointer;
+}
+.headernav:hover {
+  color: black;
+  border-radius: 10px;
+  background-color: rgb(226, 222, 222);
+}
+
+/* Main section start here */
+.main-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+}
+.main-inner-wrapper {
+  width: 70%;
+  display: block;
+  margin-bottom: 50px;
+}
+.introComponent {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 180px;
+  justify-content: center;
+}
+.context-left {
+  padding: 5px;
+}
+.context-right {
+  padding: 5px;
+}
+.headingInfo {
+  color: #000;
+  position: absolute;
+}
+.headingInfo p {
+  font-size: 30px;
+  font-weight: 500;
+}
+.headingInfo h1 {
+  font-weight: bold;
+  font-size: 150px;
+  /* font-weight: 900; */
+  color: transparent;
+  -webkit-text-stroke: 1.5px #111010;
+  background: url(./Assets/black-white-arrows_23-2148456181.avif);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 50s linear infinite;
+  text-transform: uppercase;
+  line-height: 100px;
+  margin-left: -10px;
+  margin-bottom: 30px;
+}
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+.headingInfo h3 {
+  color: grey;
+  font-size: 20px;
+  font-weight: 500;
+}
+.headingInfo button {
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.context-right img {
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* Main section end here */
+/* skills section */
+.main-inner-wrapper2 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 10px;
+}
+.main-inner-wrapper2 h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 50px;
+}
+.videoContainer {
+  width: 58%;
+}
+.videoContainer img {
+  cursor: url(https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png)
+      39 39,
+    auto;
+  width: 100%;
+}
+
+/* projects section */
+
+.main-inner-wrapper3 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  /* padding: 10px; */
+}
+
+.main-inner-wrapper3 h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.projectDiv{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* .imgholder {
+  display: flex;
+  /* width: 500px; */
+
+.holder {
+  width: 30vw;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  height: auto;
+  border: 1px solid rgb(156, 153, 153);
+  border-radius: 10px;
+  cursor: url(https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png)
+      39 39,
+    auto;
+}
+.holder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+.holder img:hover {
+  box-shadow: 0px 0px 100px 0px rgb(246, 255, 0);
+  transform: scale(1.1);
+  transition: 700ms ease-in-out;
+}
+/* footer start here */
+.hrBar{
+  width: 60%;
+  color: #4a4848;
+}
+.main-inner-wrapper4{
+  width: 70%;
+  height: 20vh;
+  margin-top: 20px;
+  padding: 10px;
+}
+.footerDiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footerDiv h1{
+  font-size: 32px;
+  font-weight: bold;
+}
+.box2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box2 h4{
+  font-size: medium;
+  color: gray;
+}
+.iconRow{
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Socioicon:hover{
+  color: #4a4848;
+  cursor: pointer;
+}
+.iconRow a{
+  text-decoration: none;
+  color: #000;
+}
+.iframeDiv{
+  height: 90vh;
 }
