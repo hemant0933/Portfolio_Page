@@ -42,6 +42,10 @@ const Main = () => {
       }
   ]
 
+  const OpenLinkdin = () =>{
+    return window.location.href = 'https://www.linkedin.com/in/hemant-kumar-0a9b69bb/';
+  }
+
  
 
   return (
@@ -53,8 +57,8 @@ const Main = () => {
               <p>Hi! &nbsp;  I'm</p>
               <h1>Hemant<span className='dot'>.</span></h1>
               <h3>Keep it Simple</h3>
-              <button type='button' className='btn btn-dark'>Connect Now</button>
-              <button type='button' className='btn btn-dark'>Resume</button>
+              <button type='button' className='btn btn-dark' onClick={OpenLinkdin}>Connect Now</button>
+              <a href="../Assets/Hemant_kumar28-02-2023.pdf" download><button type='button' className='btn btn-dark'>Resume!</button></a>
              </div>
           </div>
           <div className='col-6 context-right'>
