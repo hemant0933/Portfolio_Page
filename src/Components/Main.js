@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 import men from '../Assets/men.jpg';
 import Myvideo from '../Assets/tree.png';
@@ -9,36 +9,45 @@ import tic from '../Assets/tic-ta-toe.png' ;
 import DialogProjects from './DialogProjects';
 import connect from '../Assets/connect.png';
 import meshop from '../Assets/meshop.png';
+
 import { BsInstagram, BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 
-
 const Main = () => {
 
+
+
+  
   let projectData = [
       {
+        id:1,
         src:'https://hemant0933.github.io/swiggy-clone/',
         Imgsrc:swiggy
       },
       {
-      src:'https://hemant0933.github.io/Flipkart-Clone/',
-      Imgsrc:flipkart
+        id:2,
+        src:'https://hemant0933.github.io/Flipkart-Clone/',
+        Imgsrc:flipkart
       },
       {
-      src:'https://main--funny-bunny-ecd8ca.netlify.app/',
-      Imgsrc:pexel
+        id:3,
+        src:'https://main--funny-bunny-ecd8ca.netlify.app/',
+        Imgsrc:pexel
       },
       {
-      src:'https://hemant0933.github.io/Tik-Tac-Toe-game/',
-      Imgsrc: tic
+        id:4,
+        src:'https://hemant0933.github.io/Tik-Tac-Toe-game/',
+        Imgsrc: tic
       },
       {
-      src:'https://hemant0933.github.io/Bootstarpe-landing-page/',
-      Imgsrc: connect
+        id:5,
+        src:'https://hemant0933.github.io/Bootstarpe-landing-page/',
+        Imgsrc: connect
       },
       {
-      src:'https://hemant0933.github.io/F3-Project/',
-      Imgsrc: meshop
+        id:6,
+        src:'https://hemant0933.github.io/F3-Project/',
+        Imgsrc: meshop
       }
   ]
 
@@ -76,12 +85,14 @@ const Main = () => {
 
         {/* Projects */}
        <div className='container main-inner-wrapper3' id='projects'>
-            <h1>Projects <span className='dot'>.</span></h1>
+            <h1>Projects <span className='dot'>.</span></h1> 
             <div className='projectDiv'>
             {
+             
               projectData.map((data) => {
                 return (
                   <DialogProjects
+                      key={data.id}
                       src={data.src}
                       Imgsrc={data.Imgsrc}
                 />)
