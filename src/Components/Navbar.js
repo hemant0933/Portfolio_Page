@@ -1,27 +1,25 @@
 import { Link } from "@mui/material";
 import React, { useState } from "react";
 
-import { HiOutlineLightBulb } from "react-icons/hi";
-
 const Navbar = () => {
-  const [theme, setTheme] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
+  // const [theme, setTheme] = useState({
+  //   color: "black",
+  //   backgroundColor: "white",
+  // });
 
-  const toggleBtn = () => {
-    if (theme.color === "black") {
-      setTheme({
-        color: "white",
-        backgroundColor: "black",
-      });
-    } else {
-      setTheme({
-        color: "black",
-        backgroundColor: "white",
-      });
-    }
-  };
+  // const toggleBtn = () => {
+  //   if (theme.color === "black") {
+  //     setTheme({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //     });
+  //   } else {
+  //     setTheme({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //     });
+  //   }
+  // };
 
   return (
     // <div className='nav-wrapper' style={theme}>
@@ -96,7 +94,6 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-   
       </div>
     </nav>
   );
