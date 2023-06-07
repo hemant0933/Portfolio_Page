@@ -24,8 +24,8 @@ const Navbar = () => {
          
             <Link
               className="navbar-brand"
-              style={{ textDecoration: "none", color: "#000" }}
-              href="#"
+              style={{ textDecoration: "none",color:'#000'}}
+              href="/"
             >
               <h1>
                 PortFolio<strong className="dot">.</strong>

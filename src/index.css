@@ -1,27 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap");
 * {
   box-sizing: border-box;
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Ubuntu", serif;
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
 }
-.light {
-  color: #000;
-  background-color: white;
-}
-.dark {
-  color: #fff;
-  background-color: #fff;
-}
+
 a {
   text-decoration: none;
 }
 .nav-wrapper {
   display: flex;
-  padding: 10px 0px 0px 20px;
-  position: fixed;
+  padding: 2px 0px 0px 10px;
   z-index: 100;
-  background-color: rgba(255, 255, 255);
+  background-color: rgb(246, 245, 245);
   width: 100vw;
   border-bottom: 1px solid rgba(237, 237, 237);
 }
@@ -50,10 +43,10 @@ a {
 .headernav {
   margin-right: 10px;
   padding: 10px;
-  color: grey;
+  color: rgb(9, 9, 9);
   font-size: 17px;
   font-weight: bolder;
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Ubuntu", serif;
   cursor: pointer;
 }
 .headernav:hover {
@@ -166,9 +159,7 @@ a {
   align-items: center;
   flex-direction: column;
   padding-top: 150px;
-  background-image: radial-gradient(#cc74bf 2px, transparent 2px);
-  background-size: 32px 32px;
-  background-color: #f6bd18;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 .main-inner-wrapper {
   width: 90%;
@@ -178,7 +169,30 @@ a {
 
 .introComponent {
   margin-bottom: 50px;
+  position: "relative";
 }
+/* Wave background csss */
+.custom-shape-divider-bottom-1686061293 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1686061293 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 135px;
+}
+
+.custom-shape-divider-bottom-1686061293 .shape-fill {
+  fill: #ffffff;
+}
+/* Wave background csss */
+
 .row {
   width: 100%;
   display: flex;
@@ -219,14 +233,6 @@ a {
     margin-left: auto;
     margin-right: auto;
   }
-  /* .projectDiv {
-    flex: 100%;
-    max-width: 400px;
-    flex-direction: column;
-  }
-  .projectDiv .holder {
-    width: 300px;
-  } */
 }
 @media (max-width: 800px) {
   .context-left {
@@ -396,6 +402,7 @@ a {
   cursor: url(https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png)
       39 39,
     auto;
+  /* overflow: hidden; */
 }
 
 .holder img {
@@ -404,9 +411,9 @@ a {
   border-radius: 7px;
 }
 .holder img:hover {
-  box-shadow: 0px 0px 100px 0px rgb(246, 255, 0);
+  box-shadow: 0px 0px 20px 0px rgb(15, 15, 13);
   transform: scale(1.1);
-  transition: 700ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 /* footer start here */
 .hrBar {

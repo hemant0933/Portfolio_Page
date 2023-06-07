@@ -10,12 +10,12 @@ import DialogProjects from "./DialogProjects";
 import connect from "../Assets/connect.png";
 import meshop from "../Assets/meshop.png";
 
-import { BsInstagram, BsLinkedin } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
 import Intro from "./Intro";
 import Skills from "./Skills";
+import Footer from "./Footer";
 
 const Main = () => {
+  
   let projectData = [
     {
       id: 1,
@@ -59,7 +59,14 @@ const Main = () => {
     <div className="main-wrapper">
       <div className="container main-inner-wrapper" id="about">
         <Intro men={men} />
+        <div class="custom-shape-divider-bottom-1686061293">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+      </svg>
+    </div>
       </div>
+
+     
       {/* Skills */}
 
       <Skills />
@@ -75,38 +82,9 @@ const Main = () => {
         </div>
       </div>
       <hr className="hrBar"></hr>
-      <div className="container main-inner-wrapper4" id="socials">
-        <div className="footerDiv">
-          <div className="box1">
-            <h1>
-              Hemant Kumar <span className="dot">.</span>
-            </h1>
-          </div>
-          <div className="box2">
-            <h4>Designed and Developed by Me © 2023</h4>
-            <div className="iconRow">
-              <a href="https://www.instagram.com/hemant00000000/">
-                <BsInstagram
-                  className="Socioicon"
-                  style={{ fontSize: "30px" }}
-                />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
-              <a href="https://www.linkedin.com/in/hemant-kumar-0a9b69bb/">
-                <BsLinkedin
-                  className="Socioicon"
-                  style={{ fontSize: "30px" }}
-                />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
-              <a href="https://github.com/hemant0933">
-                <FaGithub className="Socioicon" style={{ fontSize: "30px" }} />
-                &nbsp;&nbsp;&nbsp;
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {/* Footer */}
+    <Footer/>
     </div>
   );
 };
