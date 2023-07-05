@@ -1,160 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
   font-family: "IBM Plex Serif", serif;
 }
-.light{
-  color: #000;
-  background-color: white;
-}
-.dark{
-  color: #fff;
-  background-color: #fff;
+::selection{
+  background-color: #1c6e36;
+  color: #85ec52;
 }
 
+body{
+  width: 100%;
+  height: 200vh; 
+  background: linear-gradient(127deg,#85ec52,#1c6e36,#2a4a30,#fbdad7,#04161b);
+  background-size: 300% 300%;
+  animation: gradient-animation 90s ease infinite;
+}
 
+@keyframes body {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .nav-wrapper {
-  display: flex;
-  padding: 10px 0px 0px 20px;
   position: fixed;
-  z-index: 100;
-  background-color: rgba(255, 255, 255);
-  width: 100vw;
-  border-bottom: 1px solid rgba(237, 237, 237);
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
 }
-.dot {
-  color: red;
-}
-.nav-wrapper .nav-left {
-  font-weight: bold;
-  text-align: left;
-  width: auto;
-}
-.nav-right {
+.inner{
   display: flex;
-  padding-right: 10px;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  margin-left: auto;
+  max-width: 1600px;
+  margin: 1.25rem auto 0;
+  position: relative;
+  z-index: 1000;
 }
-.nav-right .nav_list {
-  display: flex;
+.scroll{
+  background: hsla(45, 17%, 95%, .8);
+  backdrop-filter: blur(20px) saturate(1.7);
+  -webkit-backdrop-filter: blur(20px) saturate(1.7);
+}
+
+.nav_list{
+    display:flex;
+    justify-content: center;
+    margin: 0;
+    padding: calc(1.25rem) - 10px;
+    border-radius: 50px;
+    transition: all .2s linear;
+}
+ul,li{
+  list-style: none;
+  /* padding: 0.1rem; */
+
 }
 .nav_list a {
   text-decoration: none;
 }
-
 .headernav {
-  margin-right: 10px;
-  padding: 10px;
-  color: grey;
-  font-size: 17px;
-  font-weight: bolder;
-  font-family: "IBM Plex Serif", serif;
+  margin-right: 5px;
+  padding: 6px 20px;
+  color: hsla(172, 95%, 18%, 1);
+  font-size: 18.447px;
+  font-family: 'Martian Mono', monospace;
   cursor: pointer;
 }
-.headernav:hover {
-  color: black;
-  border-radius: 10px;
-  background-color: rgb(226, 222, 222);
+.nav-item{
+  margin: auto 3px;
 }
-
-/* stylling for toggle btn */
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.8em;
-  height: 3.8em;
+.nav-item.active {
+   opacity: 1;
+   transition: all .2s ease-in-out;
+   background: hsl(0, 0%, 100%,0.5);
+   padding-right: calc(1.25rem) - 5px;
+   border-radius: 1.5rem;
 }
-
-.torch {
-  margin-top: 0.9em;
-  margin-left: 0.95em;
-  width: 30px;
-  height: 30px;
-  transform: rotate(-45deg);
-}
-
-.slider .b {
-  position: relative;
-  top: -3.3em;
-  transform: rotate(270deg);
-}
-
-.slider .bling_85 {
-  stroke: #fff;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-dasharray: 3;
-  stroke-dashoffset: 15;
-  transition: all 0.3s ease;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: .4s;
-  border-radius: 50%;
-  background-color: rgba(116, 115, 115, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.chk_85:checked + .slider {
-  animation: tap 0.3s linear forwards;
-}
-
-.chk_85:checked + .slider .bling_85 {
-  animation: bling_8561328 0.3s linear forwards;
-  animation-delay: 0.2s;
-}
-
-.chk_85:checked + .slider {
-  background-color: #FFA133;
-}
-
-.chk_85:focus + .slider {
-  box-shadow: 0 0 1px #FFA133;
-}
-
-@keyframes bling_8561328 {
-  50% {
-    stroke-dasharray: 3;
-    stroke-dashoffset: 12;
-  }
-
-  100% {
-    stroke-dasharray: 3;
-    stroke-dashoffset: 9;
-  }
-}
-
-@keyframes tap {
-  50% {
-    scale: 0.9;
-  }
-
-  100% {
-    scale: 1;
-  }
-}
-
-
 /* Main section start here */
 .main-wrapper {
   width: 100%;
@@ -164,6 +97,7 @@
   flex-direction: column;
   padding-top: 150px;
 }
+
 .main-inner-wrapper {
   width: 70%;
   display: block;
@@ -173,9 +107,16 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 180px;
+  z-index: -500;
   justify-content: center;
 }
+
 .context-left {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
   padding: 5px;
 }
 .context-right {
@@ -183,37 +124,39 @@
 }
 .headingInfo {
   color: #000;
-  position: absolute;
-}
-.headingInfo p {
-  font-size: 30px;
-  font-weight: 500;
-}
-.headingInfo h1 {
-  font-weight: bold;
-  font-size: 150px;
-  /* font-weight: 900; */
-  color: transparent;
-  -webkit-text-stroke: 1.5px #111010;
-  background: url(./Assets/black-white-arrows_23-2148456181.avif);
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation: back 50s linear infinite;
-  text-transform: uppercase;
-  line-height: 100px;
-  margin-left: -10px;
+  position: relative;
+  font-size: 114px;
+  font-family: 'Playfair Display', serif;
   margin-bottom: 30px;
 }
-@keyframes back {
-  100% {
-    background-position: 2000px 0;
-  }
+.headingInfo .title{
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 10;
 }
-.headingInfo h3 {
-  color: grey;
-  font-size: 20px;
-  font-weight: 500;
+
+.starIcon1{
+  position: absolute;
+  width: auto;
+  left: -5%;
+  top: -10%;
 }
+.starIcon2{
+  position: absolute;
+  width: auto;
+  right: 5%;
+  bottom: 0;
+}
+
+.starIcon1>img{
+  animation:rotate-center 6s cubic-bezier(.55,.085,.68,.53) infinite reverse
+}
+.starIcon2>img{
+  animation:rotate-center 6s cubic-bezier(.55,.085,.68,.53) infinite reverse
+}
+@keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
 .headingInfo button {
   font-size: 16px;
   padding: 10px;

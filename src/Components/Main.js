@@ -1,6 +1,4 @@
 import React from 'react';
-
-import men from '../Assets/men.jpg';
 import Myvideo from '../Assets/tree.png';
 import swiggy from '../Assets/swiggy-clone.png';
 import flipkart from '../Assets/flipkart-clone.png';
@@ -12,6 +10,7 @@ import meshop from '../Assets/meshop.png';
 
 import { BsInstagram, BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
+import HerosSection from './HerosSection';
 
 const Main = () => {
 
@@ -51,29 +50,13 @@ const Main = () => {
       }
   ]
 
-  const OpenLinkdin = () =>{
-    return window.location.href = 'https://www.linkedin.com/in/hemant-kumar-0a9b69bb/';
-  }
 
  
 
   return (
     <div className='main-wrapper'>
        <div className='container main-inner-wrapper' id='about'>
-         <div className='introComponent'>
-         <div className='col-6 context-left'>
-            <div className='headingInfo'>
-              <p>Hi! &nbsp;  I'm</p>
-              <h1>Hemant<span className='dot'>.</span></h1>
-              <h3>Keep it Simple</h3>
-              <button type='button' className='btn btn-dark' onClick={OpenLinkdin}>Connect Now</button>
-              <a href="../Assets/Hemant_kumar28-02-2023.pdf" download><button type='button' className='btn btn-dark'>Resume!</button></a>
-             </div>
-          </div>
-          <div className='col-6 context-right'>
-            <img src={men}  width={"100%"} alt='menImage'/>
-          </div>
-        </div>
+        <HerosSection/>
        </div>
         {/* Skills */}
        <div className='container main-inner-wrapper2' id='skills'>
