@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import Myvideo from '../Assets/tree.png';
 import swiggy from '../Assets/swiggy-clone.png';
@@ -12,7 +11,7 @@ import meshop from '../Assets/meshop.png';
 import { BsInstagram, BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 import HerosSection from './HerosSection';
-=======
+
 import React from "react";
 
 import men from "../Assets/men.jpg";
@@ -28,12 +27,12 @@ import meshop from "../Assets/meshop.png";
 import Intro from "./Intro";
 import Skills from "./Skills";
 import Footer from "./Footer";
->>>>>>> 20cafe2882f2c721c3dbff5791a5a37380e8ffc5
+
 
 const Main = () => {
   
   let projectData = [
-<<<<<<< HEAD
+
       {
         id:1,
         src:'https://hemant0933.github.io/swiggy-clone/',
@@ -81,7 +80,6 @@ const Main = () => {
            <img src={Myvideo} alt="tree" className='img-fluid'/>
           </div>
        </div>
-=======
     {
       id: 1,
       src: "https://hemant0933.github.io/swiggy-clone/",
@@ -130,7 +128,7 @@ const Main = () => {
       </svg>
     </div>
       </div>
->>>>>>> 20cafe2882f2c721c3dbff5791a5a37380e8ffc5
+
 
      
       {/* Skills */}
