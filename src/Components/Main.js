@@ -53,16 +53,9 @@ const Main = () => {
        </div>
         {/* Skills */}
        <div className='container main-inner-wrapper2' id='skills'>
-        <h1>Skills<span className='dot'>.</span></h1>
-          <div className='videoContainer'>
-           <img src={Myvideo} alt="tree" className='img-fluid'/>
-          </div>
+       <Skills />
        </div>
-
      
-      {/* Skills */}
-
-      <Skills />
       {/* Projects */}
       <div className="container main-inner-wrapper3" id="projects">
         <h1>
