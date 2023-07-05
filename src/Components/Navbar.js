@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
-=======
 import { Link } from "@mui/material";
 import React from "react";
->>>>>>> 20cafe2882f2c721c3dbff5791a5a37380e8ffc5
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
 
-<<<<<<< HEAD
   const handleClick = (item) => {
     setActiveItem(item)
   }
@@ -68,7 +64,7 @@ const Navbar = () => {
         </ul>
       </div>
     </header>
-=======
+
   return (
     <nav className="navbar navbar-expand-lg nav-wrapper fixed-top bg-body-tertiary">
       <div className="container-fluid">
@@ -130,7 +126,6 @@ const Navbar = () => {
           </div>
       </div>
     </nav>
->>>>>>> 20cafe2882f2c721c3dbff5791a5a37380e8ffc5
   );
 };
 
