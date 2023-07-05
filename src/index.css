@@ -64,8 +64,6 @@ body{
 }
 ul,li{
   list-style: none;
-  /* padding: 0.1rem; */
-
 }
 .nav_list a {
   text-decoration: none;

@@ -9,8 +9,6 @@ import connect from '../Assets/connect.png';
 import meshop from '../Assets/meshop.png';
 import Skills from './Skills'
 import Footer from './Footer'
-import { BsInstagram, BsLinkedin } from 'react-icons/bs';
-import { FaGithub } from 'react-icons/fa';
 import HerosSection from './HerosSection';
 
 const Main = () => {

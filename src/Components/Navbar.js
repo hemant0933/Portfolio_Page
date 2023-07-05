@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
@@ -62,7 +63,7 @@ const Navbar = () => {
         </ul>
       </div>
     </header>
-  );
-};
+
+  )};
 
 export default Navbar;
