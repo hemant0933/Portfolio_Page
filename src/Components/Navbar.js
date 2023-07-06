@@ -63,11 +63,11 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className={`nav-item ${activeItem === "socials" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"socials")}
+            className={`nav-item ${activeItem === "contact" ? "active" : ""}`}
+            onClick={(e) => handleClick(e,"contact")}
           >
-            <a href="#socials">
-              Socials
+            <a href="#contact">
+              Contact
             </a>
           </li>
         </ul>

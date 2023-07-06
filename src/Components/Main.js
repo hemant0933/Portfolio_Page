@@ -4,6 +4,7 @@ import Footer from './Footer'
 import HerosSection from './HerosSection';
 import About from './About';
 import Project from './Project';
+import Contact from './Contact';
 
 const Main = () => {
   
@@ -24,12 +25,15 @@ const Main = () => {
       <div className='container main-inner-wrapper' id='about'>
         <About/>
        </div>
-      <hr className="hrBar"></hr>
-
-      <div className='container main-inner-wrapper' id='about'>
-        <Footer/>
+     
+      <div className='container main-inner-wrapper' id='contact'>
+        <Contact/>
        </div>       
-    
+       <hr className="hrBar"></hr>
+      <div className='container main-inner-wrapper'>
+       <Footer/>
+       </div>  
+      
     </div>
   );
 };
