@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dialog from "@mui/material/Dialog";
 
-const DialogProjects = ({ src, Imgsrc,title }) => {
+const DialogProjects = ({ src,Imgsrc,title }) => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState("xl");
 
@@ -20,12 +20,13 @@ const DialogProjects = ({ src, Imgsrc,title }) => {
   };
 
   return (
-    <div>
+    <div className="cards">
+       <p>{title}</p>
       <div className="imgholder">
-        <h5 style={{textDecoration:'underline'}}>{title}</h5>
         <div className="holder">
           <img src={Imgsrc} onClick={handleOpen} className="w-100" alt="p1" />
         </div>
+
         <Dialog
           open={open}
           onClose={handleClose}
@@ -65,21 +66,21 @@ const DialogProjects = ({ src, Imgsrc,title }) => {
                   justifyContent: "start",
                   gap: "5px",
                   alignItems: "center",
-                  fontSize: "150%",
+                  fontSize: "140%",
                 }}
               >
                 <h1
                   onClick={handleClose}
-                  style={{ zIndex: "50", marginTop: "10px", cursor: "pointer" }}
+                  style={{ zIndex: "50", marginTop: "12px", cursor: "pointer" }}
                 >
                   <strong style={{ color: "#FE5E58" }}> .</strong>
                 </h1>
-                <h1 style={{ marginTop: "10px" }}>
+                <h1 style={{ marginTop: "12px" }}>
                   <strong style={{ color: "#FEBD2C" }}>.</strong>
                 </h1>
                 <h1
                   onClick={changeSize}
-                  style={{ marginTop: "10px", cursor: "pointer" }}
+                  style={{ marginTop: "12px", cursor: "pointer" }}
                 >
                   <strong style={{ color: "#27C841" }}> .</strong>
                 </h1>
