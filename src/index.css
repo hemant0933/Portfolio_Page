@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -14,13 +15,13 @@
 
 body{
   width: 100%;
-  height: 200vh; 
-  background: linear-gradient(340deg,#ef6511,#510265,#51fe63,#3b16c0);
-  background-size: 240% 240%;
-  animation: gradient-animation 28s ease infinite;
+  height: 250vh; 
+  background: linear-gradient(31deg,#a72dcd,#f537ea,#868ea5,#b39a48,#f72aca,#1e0922);
+  background-size: 360% 360%;
+  animation: gradient-animation 54s ease infinite;
 }
 
-@keyframes body {
+@keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
   }
@@ -108,36 +109,6 @@ ul,li{
   margin-bottom: 50px;
   position: "relative";
 }
-/* Wave background csss */
-.custom-shape-divider-bottom-1686061293 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-bottom-1686061293 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 135px;
-}
-
-.custom-shape-divider-bottom-1686061293 .shape-fill {
-  fill: #ffffff;
-}
-/* Wave background csss */
-
-.row {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 180px;
-  z-index: -500;
-  justify-content: center;
-}
 
 .context-left {
   width: 100%;
@@ -145,86 +116,32 @@ ul,li{
   margin-left: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 5px;
 }
-.context-right {
-  position: relative;
-  flex: 1;
-  max-width: 460px;
-  height: 500px;
+.smallText{
+  color: #393646;
+  font-size: 21px;
+  text-align: center;
+  font-family: 'Bacasime Antique', serif;
 }
 
-@media (max-width: 425px) {
-  .context-left {
-    flex: 100%;
-    max-width: 200px;
-  }
-  .context-left .headingInfo .name {
-    font-size: 70px;
-  }
-  .context-right {
-    flex: 100%;
-    max-width: 200px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (max-width: 800px) {
-  .context-left {
-    flex: 100%;
-    max-width: 600px;
-    margin-bottom: 10rem;
-  }
-  .context-left .headingInfo .name {
-    font-size: 90px;
-  }
-  .context-right {
-    flex: 100%;
-    max-width: 600px;
-  }
-  .projectDiv {
+/* .projectDiv {
     flex: 100%;
     max-width: 500px;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
   }
-  .projectDiv .holder {
+.projectDiv .holder {
     width: 400px;
-  }
-}
-@media (max-width: 900px) {
-  .context-left {
-    flex: 100%;
-    max-width: 580px;
-    margin-bottom: 10rem;
-  }
-  .context-left .headingInfo .name {
-    font-size: 110px;
-  }
-  .context-right {
-    flex: 100%;
-    max-width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .projectDiv {
-    flex: 100%;
-    max-width: 500px;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .projectDiv .holder {
-    width: 400px;
-  }
-}
+  } */
 
 .headingInfo {
-  color: #000;
+  color: #393646;
   position: relative;
   font-size: 114px;
+  font-weight: 900;
   font-family: 'Playfair Display', serif;
   margin-bottom: 30px;
 }
@@ -238,45 +155,28 @@ ul,li{
 .starIcon1{
   position: absolute;
   width: auto;
-  left: -5%;
-  top: -10%;
+  z-index: 3;
+  left: 0%;
+  top: 0%;
 }
 .starIcon2{
   position: absolute;
+  z-index: 3;
   width: auto;
-  right: 5%;
+  right: 0;
   bottom: 0;
 }
 
 .starIcon1>img{
+  image-rendering: crisp-edges;
   animation:rotate-center 6s cubic-bezier(.55,.085,.68,.53) infinite reverse
 }
 .starIcon2>img{
+  image-rendering: crisp-edges;
   animation:rotate-center 6s cubic-bezier(.55,.085,.68,.53) infinite reverse
 }
 @keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
-.headingInfo button {
-  font-size: 16px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-right: 20px;
-}
-.context-right img {
-  animation: float 5s ease-in-out infinite;
-  border-radius: 25% 25% 25% 25% / 25% 25% 25% 25%;
-}
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 /* Main section end here */
 /* skills section */
 .main-inner-wrapper2 {

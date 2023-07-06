@@ -1,5 +1,5 @@
 import React from 'react';
-import flower from '../Assets/flower.png'
+import flower from '../Assets/star-21-512.png'
 // import men from '../Assets/men.jpg';
 
 const HerosSection = () => {
@@ -10,16 +10,23 @@ const HerosSection = () => {
     
   return (
     <div className='introComponent'>
-    <div className='col-6 context-left'>
+    <div className='col-12 context-left'>
        <h1 className='headingInfo'>
-       <span className='title'> Hi!  I'm Hemant <span className='starIcon1'><img src={flower} width={80} alt='flowericon' /></span><br/>
-    I'm a Web App Developer  <span className='starIcon2'><img src={flower} width={80} alt='flowericon' /></span></span>
-       
-        </h1>
+        <span className='title'>
+              Hi.  I'm Hemant. 
+            <span className='starIcon1'>
+              <img src={flower} width={85} alt='flowericon' />
+            </span><br/>
+            A WebApp <br/> Developer. 
+            <span className='starIcon2'>
+              <img src={flower} width={85} alt='flowericon' />
+              </span>
+        </span>
+      </h1>
+        <div className='smallText'>
+          <p>Bridging design and technology for seamless user-centric experiences.</p>
+        </div>
      </div>
-     {/* <div className='col-6 context-right'>
-       <img src={men}  width={"100%"} alt='menImage'/>
-     </div> */}
    </div>
   );
 }

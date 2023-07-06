@@ -1,5 +1,4 @@
 import React from 'react';
-import Myvideo from '../Assets/tree.png';
 import swiggy from '../Assets/swiggy-clone.png';
 import flipkart from '../Assets/flipkart-clone.png';
 import pexel from  '../Assets/pexel.png';
@@ -10,6 +9,7 @@ import meshop from '../Assets/meshop.png';
 import Skills from './Skills'
 import Footer from './Footer'
 import HerosSection from './HerosSection';
+import About from './About';
 
 const Main = () => {
   
@@ -48,15 +48,14 @@ const Main = () => {
 
   return (
     <div className='main-wrapper'>
-       <div className='container main-inner-wrapper' id='about'>
+       <div className='container main-inner-wrapper' id='home'>
         <HerosSection/>
        </div>
-        {/* Skills */}
+
        <div className='container main-inner-wrapper2' id='skills'>
-       <Skills />
+         <Skills />
        </div>
-     
-      {/* Projects */}
+
       <div className="container main-inner-wrapper3" id="projects">
         <h1>
           Projects <span className="dot">.</span>
@@ -67,10 +66,16 @@ const Main = () => {
           ))}
         </div>
       </div>
-      <hr className="hrBar"></hr>
 
-      {/* Footer */}
-    <Footer/>
+      <div className='container main-inner-wrapper' id='about'>
+        <About/>
+       </div>
+      <hr className="hrBar"></hr>
+      
+      <div className='container main-inner-wrapper' id='about'>
+        <Footer/>
+       </div>       
+    
     </div>
   );
 };
