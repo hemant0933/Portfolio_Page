@@ -1,8 +1,19 @@
-import React from "react";
+import React,{useRef} from "react";
+import {motion,useScroll,useTransform } from "framer-motion"
+
 
 const About = () => {
+    const targetRef = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target:targetRef,
+        offset:["end end","end start"]
+    });
+    const opacity = useTransform(scrollYProgress, [0,0.6],[2,0]);
   return (
-    <div className="aboutSection">
+    <motion.div 
+        style={{opacity}}
+        ref={targetRef}
+        className="aboutSection">
       <p>About.</p>
       <div className="para">
         <p>
@@ -16,7 +27,7 @@ const About = () => {
           at a time."
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

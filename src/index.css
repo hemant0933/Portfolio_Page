@@ -1,16 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap");
-* {
+::root{
+  --font-color1 : #393646;
+  --font-color2: #ffff;
+  --font-color3: #0000;
+
+  --font-family1: "Martian Mono", monospace;
+  --font-family2: "Bacasime Antique", serif;
+  --font-family3: "Playfair Display", serif;
+
+  --font-title: 2em;
+  --font-main: 140px;
+  --font-footer: 32px;
+  
+  --font-weight-900: 900;
+  --font-weight-700: 700;
+  --font-weight-600: 600;
+  --font-weight-500: 500;
+}
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
-  /* font-family: "IBM Plex Serif", serif; */
   scroll-behavior: smooth;
 }
 ::selection {
   background-color: #1c6e36;
   color: #85ec52;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+::-webkit-scrollbar-track{
+  background: #FFFFFF;
+  border-radius: 100vw;
+  margin-block: .5em;
+  margin-inline: 1em;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 100vw;
+  border: .25em solid  #FFFFFF;
+  background: #23074d;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: hsl(120 100% 10% / 1);
 }
 
 body {
@@ -53,7 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 1.25rem auto 0;
   position: relative;
   z-index: 1000;
@@ -88,13 +123,13 @@ li {
 .nav-item>a{
   text-decoration: none;
   margin: 30px;
-  color: #393646;
+  color: #313131;
   font-size: 18px;
-  font-family: "Martian Mono", monospace;
+  font-family:  "Martian Mono", monospace
 }
 .nav-item.active {
   opacity: 1;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease;
   background: hsl(0, 0%, 100%, 0.5);
   padding-right: calc(1.25rem) - 5px;
   border-radius: 1.5rem;
@@ -107,11 +142,10 @@ li {
   align-items: center;
   flex-direction: column;
   padding-top: 150px;
-  /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
 }
 
 .main-inner-wrapper {
-  width: 90%;
+  /* width: 90%; */
   height: auto;
   display: block;
   text-align: center;
@@ -119,7 +153,6 @@ li {
 }
 
 .introComponent {
-  margin-bottom: 50px;
   position: "relative";
 }
 
@@ -130,18 +163,17 @@ li {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 5px;
 }
 .smallText {
-  color: #393646;
-  font-size: 21px;
+  color: var(--font-color1);
+  font-size: 23px;
   text-align: center;
-  font-family: "Bacasime Antique", serif;
+  /* font-family: "Playfair Display", serif; */
+  font-weight: 100;
 }
 
-
 .headingInfo {
-  color: #393646;
+  color: var(--font-color1);
   position: relative;
   font-size: 114px;
   font-weight: 900;
@@ -174,7 +206,7 @@ li {
 
 .starIcon1 > img {
   image-rendering: crisp-edges;
-  animation: rotate-center 6s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite
+  animation: rotate-center 7s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite
     reverse;
 }
 
@@ -199,7 +231,7 @@ li {
 
 .main-inner-wrapper2 {
   max-width: 1200px;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -236,7 +268,6 @@ li {
   align-items: center;
   justify-content: center;
   margin: 0 1rem;
-  /* width: 100px; */
   flex: 1;
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(10px);
@@ -245,7 +276,9 @@ li {
     rgba(0, 0, 0, 0.3) 0 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0-2px 6px 0 inset;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url(https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png)
+      39 39,
+    auto;
 }
 
 .SkIcon > img {
@@ -498,6 +531,7 @@ li {
 .footerDiv h1 {
   font-size: 32px;
   font-weight: bold;
+  color: #393646;
 }
 
 .box2 {
@@ -509,7 +543,7 @@ li {
 
 .box2 h4 {
   font-size: medium;
-  color: gray;
+  color: #393646;
 }
 
 .iconRow {

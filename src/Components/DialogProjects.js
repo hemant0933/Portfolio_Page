@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+// import { motion} from "framer-motion";
 import Dialog from "@mui/material/Dialog";
+
+
 
 const DialogProjects = ({ src,Imgsrc,title }) => {
   const [open, setOpen] = useState(false);
@@ -18,9 +21,11 @@ const DialogProjects = ({ src,Imgsrc,title }) => {
     if (size === "xl") setSize("md");
     else setSize("xl");
   };
-
+  
   return (
-    <div className="cards">
+    <div 
+
+      className="cards">
        <p>{title}</p>
       <div className="imgholder">
         <div className="holder">

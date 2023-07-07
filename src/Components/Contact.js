@@ -11,7 +11,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     if(name === ""){
-        toast.error("Please enter a name")
+        toast.error("Please enter the details")
         return;
     }
     else if(message === ""){
@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <div className="divide">
         <div><Toaster/></div>
-      <h1>How can you contact me.</h1>
+      <h1>Hire me !</h1>
  
         <div class="form-container">
           <form class="form" ref={form} onSubmit={sendEmail}>

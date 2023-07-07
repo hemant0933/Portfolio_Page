@@ -1,15 +1,19 @@
-import React from 'react';
-import swiggy from '../Assets/swiggy-clone.png';
-import flipkart from '../Assets/flipkart-clone.png';
-import pexel from  '../Assets/pexel.png';
-import tic from '../Assets/tic-ta-toe.png' ;
+import React,{useRef} from 'react';
 import DialogProjects from './DialogProjects';
-import connect from '../Assets/connect.png';
-import meshop from '../Assets/meshop.png';
-import imdb from "../Assets/imdb_clone.png";
-import typingTest from "../Assets/typing_master.png";
+import { AllImages } from './AllImages';
+// destructuring
+const { swiggy,
+  flipkart,
+  pexel,
+  tic,
+  connect,
+  meshop,
+  imdb,
+  typingTest} = AllImages;
 
 const Project = () => {
+  const projectRef = useRef(null);
+  
     let projectData = [
         {
           id:1,
@@ -61,13 +65,15 @@ const Project = () => {
           title: 'Typing Master Website'
         }
     ]
-  
+
   return (
     <div>
         <p className='textProject'>
           Projects<span className="dot">.</span>
         </p><br/>
-        <div className="projectDiv">
+        <div 
+          ref={projectRef} 
+          className="projectDiv">
           {projectData.map((data) => (
             <DialogProjects key={data.id} src={data.src} title={data.title} Imgsrc={data.Imgsrc} />
           ))}
