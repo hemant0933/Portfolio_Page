@@ -1,6 +1,8 @@
 import React,{useRef} from 'react';
 import DialogProjects from './DialogProjects';
 import { AllImages } from './AllImages';
+import { motion } from "framer-motion";
+import { staggerContainer } from "../utils/motion";
 // destructuring
 const { swiggy,
   flipkart,
@@ -67,7 +69,12 @@ const Project = () => {
     ]
 
   return (
-    <div>
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{once:false, amount:0.25}}
+    >
         <p className='textProject'>
           Projects<span className="dot">.</span>
         </p><br/>
@@ -78,7 +85,7 @@ const Project = () => {
             <DialogProjects key={data.id} src={data.src} title={data.title} Imgsrc={data.Imgsrc} />
           ))}
         </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 // import { motion} from "framer-motion";
 import Dialog from "@mui/material/Dialog";
+import { motion } from "framer-motion";
+import { navVariants} from "../utils/motion";
 
-
-
-const DialogProjects = ({ src,Imgsrc,title }) => {
+const DialogProjects = ({ src, Imgsrc, title }) => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState("xl");
 
@@ -21,14 +21,17 @@ const DialogProjects = ({ src,Imgsrc,title }) => {
     if (size === "xl") setSize("md");
     else setSize("xl");
   };
-  
-  return (
-    <div 
 
-      className="cards">
-       <p>{title}</p>
-      <div className="imgholder">
-        <div className="holder">
+  return (
+    <motion.div  
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show" className="cards">
+      <p>{title}</p>
+      <div 
+        className="imgholder">
+        <div 
+          className="holder">
           <img src={Imgsrc} onClick={handleOpen} className="w-100" alt="p1" />
         </div>
 
@@ -111,7 +114,7 @@ const DialogProjects = ({ src,Imgsrc,title }) => {
           </div>
         </Dialog>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

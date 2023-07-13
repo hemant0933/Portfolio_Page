@@ -10,16 +10,9 @@ import { motion } from "framer-motion";
 const Skills = () => {
   return (
     <div className="container main-inner-wrapper2" id="skills">
-      <motion.p
-        initial={{ x: -100 }}
-        animate={{ x: 0 }}
-        transition={{
-          duration: "1",
-          delay: "1",
-        }}
-      >
+      <p>
         Skills<span className="dot">.</span>
-      </motion.p>
+      </p>
       <div className="flexcontainer">
         <motion.div
           whileHover={{ scale: 1.1 }}

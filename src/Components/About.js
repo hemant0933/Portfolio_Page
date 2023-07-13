@@ -1,20 +1,20 @@
-import React,{useRef} from "react";
-import {motion,useScroll,useTransform } from "framer-motion"
-
+import React from "react";
+import {motion} from "framer-motion"
+import { navVariants,textVariant2 } from "../utils/motion";
 
 const About = () => {
-    const targetRef = useRef(null);
-    const {scrollYProgress} = useScroll({
-        target:targetRef,
-        offset:["end end","end start"]
-    });
-    const opacity = useTransform(scrollYProgress, [0,0.6],[2,0]);
+   
   return (
     <motion.div 
-        style={{opacity}}
-        ref={targetRef}
+    variants={navVariants}
+    initial="hidden"
+    whileInView="show"
         className="aboutSection">
-      <p>About.</p>
+      <motion.p
+       variants={textVariant2}
+         initial="hidden"
+         whileInView="show"
+       >About.</motion.p>
       <div className="para">
         <p>
           "I am 22 years old and I love art and design at an early age, so I've

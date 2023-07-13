@@ -4,13 +4,13 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
 
-  const handleClick = (e,item) => {
+  const handleClick = (e, item) => {
     e.preventDefault();
     setActiveItem(item);
     const target = document.querySelector(`#${item}`);
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth' });
-  }
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -33,42 +33,33 @@ const Navbar = () => {
         <ul className={`nav_list ${scroll ? "scroll" : ""}`}>
           <li
             className={`nav-item ${activeItem === "home" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"home")}
+            onClick={(e) => handleClick(e, "home")}
           >
-            <a href="/">
-              Home
-            </a>
+            <a href="/">Home</a>
           </li>
           <li
             className={`nav-item ${activeItem === "about" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"about")}
+            onClick={(e) => handleClick(e, "about")}
           >
-            <a href="#about">
-              About </a>
+            <a href="#about">About </a>
           </li>
           <li
             className={`nav-item ${activeItem === "skills" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"skills")}
+            onClick={(e) => handleClick(e, "skills")}
           >
-            <a href="#skills">
-              Skills
-              </a>
+            <a href="#skills">Skills</a>
           </li>
           <li
             className={`nav-item ${activeItem === "projects" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"projects")}
+            onClick={(e) => handleClick(e, "projects")}
           >
-            <a href="#projects">
-              Project
-            </a>
+            <a href="#projects">Project</a>
           </li>
           <li
             className={`nav-item ${activeItem === "contact" ? "active" : ""}`}
-            onClick={(e) => handleClick(e,"contact")}
+            onClick={(e) => handleClick(e, "contact")}
           >
-            <a href="#contact">
-              Contact
-            </a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>

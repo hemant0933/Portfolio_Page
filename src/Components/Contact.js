@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from "@emailjs/browser";
+import {motion} from "framer-motion"
+import { navVariants,textVariant2 } from "../utils/motion";
+
 
 const Contact = () => {
    const [name, setName] = useState("");
@@ -37,9 +40,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="divide">
+    <motion.div 
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+     className="divide">
         <div><Toaster/></div>
-      <h1>Hire me !</h1>
+      <motion.h1 variants={textVariant2}>Hire me !</motion.h1>
  
         <div class="form-container">
           <form class="form" ref={form} onSubmit={sendEmail}>
@@ -66,7 +73,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-      </div>
+      </motion.div>
   );
 };
 
