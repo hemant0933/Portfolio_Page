@@ -3,7 +3,7 @@ import LoadingComponent from "./Loader/LoadingComponent.js";
 const Skills = React.lazy(() => import("./Skills.js"));
 const Project = React.lazy(
         () => new Promise((resolve, reject) => 
-        setTimeout(() => resolve(import("./Project.js")),5000))
+        setTimeout(() => resolve(import("./Project.js")),1000))
         
         );
 const HerosSection = React.lazy(

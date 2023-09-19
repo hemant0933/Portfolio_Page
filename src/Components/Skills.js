@@ -1,68 +1,146 @@
 import React from "react";
-import html from "../Assets/html-5.png";
+import html from "../Assets/html.png";
 import css from "../Assets/css.png";
 import js from "../Assets/js.png";
 import reactIcon from "../Assets/react.png";
+import redux from "../Assets/redux.png";
 import github from "../Assets/github.png";
+import git from "../Assets/git.png";
 import bootstrape from "../Assets/bootstrap.png";
-import { motion } from "framer-motion";
+import npm from "../Assets/npm.png";
+import java from "../Assets/java.png";
+import firebase from "../Assets/firebase.png";
+import mongodb from "../Assets/mongodb.png";
+import tailwindcss from "../Assets/tailwindcss.png";
+import Nodejs from "../Assets/nodejs.png";
+import MUi from "../Assets/mui.png";
+
+// import { motion } from "framer-motion";
+
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { fontTokens } from "../theme";
+import Slider from "./Slider";
+
+const IconArray = [
+  { label: "Html", url: html },
+  { label: "Css", url: css },
+  { label: "Javascript", url: js },
+  { label: "ReactJs", url: reactIcon },
+
+  { label: "Redux", url: redux },
+  { label: "Java", url: java },
+  { label: "Tailwindcss", url: tailwindcss },
+  { label: "Bootstrape", url: bootstrape },
+
+  { label: "MUi", url: MUi },
+  { label: "Nodejs", url: Nodejs },
+  { label: "MongoDb", url: mongodb },
+  { label: "Firebase", url: firebase },
+  { label: "Git", url: git },
+  { label: "Github", url: github },
+  { label: "NPM", url: npm },
+];
 
 const Skills = () => {
+  const theme = useTheme();
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  // const background = theme.palette.background.alt;
+  const primaryLight = theme.palette.neutral.headMain;
+
   return (
-    <div className="container main-inner-wrapper2" id="skills">
-      <p>
-        Skills<span className="dot">.</span>
-      </p>
-      <div className="flexcontainer">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={html} alt="htmlIcon" />
-        </motion.div>
+    <section id="skill">
+      <Box
+        width="100%"
+        height="100vh"
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        padding="1rem 6%"
+        textAlign="center"
+        id="skill"
+        sx={{
+          backgroundColor: "#8DDFCB",
+        }}
+      >
+        {isNonMobileScreens ? (
+          <Box
+            width="90%"
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            gap="3rem"
+          >
+            <Typography
+              fontWeight="bold"
+              textAlign="center"
+              fontFamily={fontTokens.mulish}
+              fontSize="clamp(1rem, 2rem, 2.25rem)"
+            >
+              Skills
+            </Typography>
+            <Typography
+              textAlign="left"
+              fontFamily={fontTokens.mulish}
+              fontSize="clamp(0.8rem, 1.6rem, 2.25rem)"
+              color={primaryLight}
+            >
+              Development Skills and Tools
+            </Typography>
 
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={css} alt="htmlIcon" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={js} alt="htmlIcon" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={reactIcon} alt="htmlIcon" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={github} alt="htmlIcon" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="SkIcon moveable"
-        >
-          <img src={bootstrape} alt="htmlIcon" />
-        </motion.div>
-      </div>
-    </div>
+            <Box width="100%">
+              <Slider IconArray={IconArray} />
+            </Box>
+          </Box>
+        ) : (
+          <Box
+            width="100%"
+            height="auto"
+            display="flex"
+            justifyContent="space-evenly"
+            alignItems="center"
+            flexDirection="column"
+            marginTop="2rem"
+          >
+            <Typography
+              fontWeight="bold"
+              textAlign="left"
+              fontFamily={fontTokens.mulish}
+              fontSize="clamp(1rem, 2rem, 2.25rem)"
+            >
+              Skills
+            </Typography>
+            <Typography
+              textAlign="left"
+              fontFamily={fontTokens.mulish}
+              fontSize="clamp(0.5rem, 1.2rem, 2.25rem)"
+              color={primaryLight}
+              marginTop="20px"
+            >
+              Development Skills and Tools
+            </Typography>
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexWrap="wrap"
+              alignItems="center"
+              marginTop="1rem"
+            >
+              {IconArray.map((icon, index) => (
+                <Box padding="1rem" width="80px" height="80px">
+                  <img
+                    key={index}
+                    width="100%"
+                    src={icon.url}
+                    alt={icon.label}
+                  />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        )}
+      </Box>
+    </section>
   );
 };
 

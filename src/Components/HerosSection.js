@@ -1,43 +1,95 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { staggerContainer, textVariant } from "../utils/motion";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { fontTokens } from "../theme";
 
 const HerosSection = () => {
+  // const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
+  const theme = useTheme();
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const primaryLight = theme.palette.neutral.headMain;
+  const light = theme.palette.primary.dark;
+
   return (
-    <div className="introComponent">
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.21 }}
-        className="col-12 context-left"
+    <section id="/">
+      <Box
+        position="relative"
+        width="100%"
+        height="100vh"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        // sx={{ background: background }}
       >
-        <motion.h1
-          variants={textVariant(1.1)}
-          initial="hidden"
-          whileInView="show"
-          className="headingInfo"
-        >
-          <span className="title">
-            Hi. I'm Hemant.
-            <span className="starIcon1">
-              <img src="flower.svg" width={100} alt="flowericon" />
-            </span>
-            <br />
-            A WebApp <br /> Developer.
-            <span className="starIcon2">
-              <img src="flower.svg" width={100} alt="flowericon" />
-            </span>
-          </span>
-        </motion.h1>
-        <div className="smallText">
-          <motion.p variants={textVariant(1.2)}>
-            Bridging design and technology for seamless user-centric
-            experiences.
-          </motion.p>
-        </div>
-      </motion.div>
-    </div>
+        {isNonMobileScreens ? (
+          <Box
+            zIndex="1"
+            width="90%"
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography
+              fontWeight="bold"
+              textAlign="center"
+              fontFamily={fontTokens.mulish}
+              fontSize="clamp(5rem, 2rem, 2.25rem)"
+            >
+              <span>
+                Hi. I'm Hemant.
+                <br />
+                A WebApp <br /> Developer.
+              </span>
+            </Typography>
+
+            <Box>
+              <Typography
+                textAlign="center"
+                fontFamily={fontTokens.mulish}
+                fontSize="clamp(0.5rem, 1rem, 1.5rem)"
+                color={light}
+              >
+                Bridging design and technology for seamless user-centric
+                experiences.
+              </Typography>
+            </Box>
+          </Box>
+        ) : (
+          <Box
+            zIndex="1"
+            width="80%"
+            display="flex"
+            flexDirection="column"
+            marginLeft="auto"
+            marginRight="auto"
+          >
+            <Typography
+              fontWeight="bold"
+              fontFamily={fontTokens.mulish}
+              textAlign="center"
+              fontSize="clamp(3rem, 2rem, 2.25rem)"
+              color={primaryLight}
+            >
+              <span className="title">
+                Hi. I'm Hemant.
+                <br />
+                A WebApp <br /> Developer.
+              </span>
+            </Typography>
+            <Box className="smallText">
+              <Typography
+                fontFamily={fontTokens.mulish}
+                textAlign="center"
+                fontSize="clamp(0.5rem, 1rem, 2.25rem)"
+              >
+                Bridging design and technology for seamless user-centric
+                experiences.
+              </Typography>
+            </Box>
+          </Box>
+        )}
+      </Box>
+    </section>
   );
 };
 

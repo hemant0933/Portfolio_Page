@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 // import { motion} from "framer-motion";
 import Dialog from "@mui/material/Dialog";
-import { motion } from "framer-motion";
-import { navVariants} from "../utils/motion";
+// import { motion } from "framer-motion";
+// import { navVariants} from "../utils/motion";
+import { Box, Typography, useTheme } from "@mui/material";
+import { fontTokens } from "../theme";
 
 const DialogProjects = ({ src, Imgsrc, title }) => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState("xl");
+  const theme = useTheme();
+  const borderColor = theme.palette.neutral.headMain;
+  // const borderColor = theme.palette.mode
 
   const handleOpen = () => {
     setOpen(true);
@@ -23,17 +28,25 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
   };
 
   return (
-    <motion.div  
-      variants={navVariants}
-      initial="hidden"
-      whileInView="show" className="cards">
-      <p>{title}</p>
-      <div 
-        className="imgholder">
-        <div 
-          className="holder">
-          <img src={Imgsrc} onClick={handleOpen} className="w-100" alt="p1" />
-        </div>
+    <Box width="325px" height="260px" sx={{
+      border:`1px solid ${borderColor}`
+    }}
+    display="flex" 
+    flexDirection="column" 
+    alignItems="center"  
+    justifyContent="space-around">
+      <Typography
+         fontWeight="medium"
+         textAlign="center"
+         fontFamily={fontTokens.workSans}
+         fontSize="clamp(0.8rem, 1rem, 1.25rem)"
+         padding="1rem"
+      >{title}
+      </Typography>
+      <Box>
+        <Box width="325px" display="flex" alignItems="center" justifyContent="center">
+          <img src={Imgsrc} onClick={handleOpen} style={{objectFit:'contain',cursor:'pointer'}} width="90%"  alt={title} />
+        </Box>
 
         <Dialog
           open={open}
@@ -41,8 +54,7 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
           fullWidth={size}
           maxWidth={size}
         >
-          <div
-            className=""
+          <Box
             style={{
               marginLeft: "auto",
               marginRight: "auto",
@@ -54,10 +66,10 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
               borderRadius: "0px",
             }}
           >
-            <div
+            <Box
               style={{
                 marginTop: "-25px",
-                padding: "5px",
+                padding: "10px",
                 width: "100%",
                 backgroundColor: "#f0f0f0",
                 borderBottom: "1px solid lightgrey",
@@ -68,13 +80,13 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
                 alignItems: "center",
               }}
             >
-              <div
+              <Box
                 style={{
                   display: "flex",
                   justifyContent: "start",
-                  gap: "5px",
+                  gap: "7px",
                   alignItems: "center",
-                  fontSize: "140%",
+                  fontSize: "160%",
                 }}
               >
                 <h1
@@ -92,16 +104,16 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
                 >
                   <strong style={{ color: "#27C841" }}> .</strong>
                 </h1>
-              </div>
-            </div>
-            <div
+              </Box>
+            </Box>
+            <Box
               style={{
                 display: "flex",
                 flexDirection: "column",
                 borderRadius: 0,
               }}
             >
-              <div className="iframeDiv">
+              <Box className="iframeDiv">
                 <iframe
                   allowFullScreen
                   src={src}
@@ -109,12 +121,12 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
                   className="iframeFrame"
                   title="Embedded Content"
                 />
-              </div>
-            </div>
-          </div>
+              </Box>
+            </Box>
+          </Box>
         </Dialog>
-      </div>
-    </motion.div>
+      </Box>
+    </Box>
   );
 };
 

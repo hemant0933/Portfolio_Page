@@ -1,92 +1,233 @@
-import React,{useRef} from 'react';
-import DialogProjects from './DialogProjects';
-import { AllImages } from './AllImages';
-import { motion } from "framer-motion";
-import { staggerContainer } from "../utils/motion";
-// destructuring
-const { swiggy,
-  flipkart,
-  pexel,
-  tic,
-  connect,
-  meshop,
-  imdb,
-  typingTest} = AllImages;
+import React, { useRef } from "react";
+import DialogProjects from "./DialogProjects";
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import { fontTokens } from "../theme";
+import { BasedOnHtmlAndCss, BasedOnJs, BasedOnReactJs } from "../Constants";
 
 const Project = () => {
-  const projectRef = useRef(null);
-  
-    let projectData = [
-        {
-          id:1,
-          src:'https://hemant0933.github.io/swiggy-clone/',
-          Imgsrc:swiggy,
-          title: 'Swiggy Clone'
-        },
-        {
-          id:2,
-          src:'https://hemant0933.github.io/Flipkart-Clone/',
-          Imgsrc:flipkart,
-          title: 'Flipkart Clone'
-        },
-        {
-          id:3,
-          src:'https://main--funny-bunny-ecd8ca.netlify.app/',
-          Imgsrc:pexel,
-          title: 'Image Searcher'
-        },
-        {
-          id:4,
-          src:'https://hemant0933.github.io/Tik-Tac-Toe-game/',
-          Imgsrc: tic,
-          title:'Tic Toe Game'
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
-        },
-        {
-          id:5,
-          src:'https://hemant0933.github.io/Bootstarpe-landing-page/',
-          Imgsrc: connect,
-          title: 'Responsive Website using Bootstrape'
-        },
-        {
-          id:6,
-          src:'https://hemant0933.github.io/F3-Project/',
-          Imgsrc: meshop,
-          title: 'Shopping Website'
-        },
-        {
-          id:7,
-          src:'https://6458afcfa08964037b8ca138--amazing-truffle-7f596c.netlify.app/',
-          Imgsrc: imdb,
-          title: 'IMDB Clone'
-        },
-        {
-          id:8,
-          src:'https://typing-tester-taupe.vercel.app/',
-          Imgsrc: typingTest,
-          title: 'Typing Master Website'
-        }
-    ]
+  const projectRef = useRef(null);
 
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{once:false, amount:0.25}}
+  <section id="project">
+      <Box
+        position="relative"
+        marginTop="5rem"
+        padding="1rem 6%"
+        width="100%"
+        height="auto"
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        // justifyContent="center"
     >
-        <p className='textProject'>
-          Projects<span className="dot">.</span>
-        </p><br/>
-        <div 
-          ref={projectRef} 
-          className="projectDiv">
-          {projectData.map((data) => (
-            <DialogProjects key={data.id} src={data.src} title={data.title} Imgsrc={data.Imgsrc} />
-          ))}
-        </div>
-    </motion.div>
+      <Typography
+        fontWeight="bold"
+        textAlign="center"
+        fontFamily={fontTokens.mulish}
+        fontSize="clamp(1rem, 2rem, 2.25rem)"
+        // marginBottom="3rem"
+      >
+        Project
+      </Typography>
+      {isNonMobileScreens ? (
+        <Box
+          width="90%"
+          paddingBottom="160px"
+          display="flex"
+          alignItems="center"
+          flexDirection="column"
+          ref={projectRef}
+        >
+          <Typography
+            width="100%"
+            fontWeight="medium"
+            textAlign="left"
+            fontFamily={fontTokens.annie}
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+          >
+            Based on only Html And Css
+          </Typography>
+          <Box
+             width="100%"
+             padding="1rem"
+             display="flex"
+             gap="2rem"
+             justifyContent="space-evenly"
+             alignItems="center"
+             flexWrap="wrap"
+          >
+            {BasedOnHtmlAndCss.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+          <Typography
+            width="100%"
+            fontWeight="medium"
+            textAlign="left"
+            fontFamily={fontTokens.annie}
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+            marginTop="1rem"
+          >
+            Based on only Html, Css and Javascript
+          </Typography>
+          <Box
+            width="90%"
+            padding="1rem"
+            display="flex"
+            gap="1rem"
+            justifyContent="space-evenly"
+            alignItems="center"
+            flexWrap="nowrap"
+          >
+            {BasedOnJs.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+          <Typography
+            width="100%"
+            fontWeight="medium"
+            textAlign="left"
+            fontFamily={fontTokens.annie}
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+            marginTop="1rem"
+
+          >
+            Based on Reactjs
+          </Typography>
+          <Box
+            width="100%"
+            padding="1rem"
+            display="flex"
+            gap="2rem"
+            justifyContent="space-evenly"
+            alignItems="center"
+            flexWrap="wrap"
+            // marginBottom="160px"
+          >
+            {BasedOnReactJs.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+        </Box>
+      ) : (
+        <Box
+          width="100%"
+          display="flex"
+          alignItems="center"
+          flexDirection="column"
+          position="relative"
+          ref={projectRef}
+        >
+          <Typography
+            width="100%"
+            fontWeight="medium"
+            textAlign="left"
+            fontFamily={fontTokens.annie}
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+          >
+            Based on only Html And Css
+          </Typography>
+          <Box
+            width="90%"
+            // padding="1rem"
+            display="flex"
+            gap="3rem"
+            flexDirection="column"
+            justifyContent="space-evenly"
+            alignItems="center"
+          >
+            {BasedOnHtmlAndCss.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+          <Typography
+            width="100%"
+            fontWeight="medium"
+            textAlign="left"
+            fontFamily={fontTokens.annie}
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+            marginTop="1rem"
+          >
+            Based on only Html, Css and Javascript
+          </Typography>
+          <Box
+            width="90%"
+            padding="1rem"
+            display="flex"
+            gap="3rem"
+            justifyContent="space-evenly"
+            alignItems="center"
+          >
+            {BasedOnJs.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+          <Typography
+            width="100%"
+            fontFamily={fontTokens.annie}
+            fontWeight="medium"
+            textAlign="left"
+            fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+            padding="1rem"
+            marginTop="1rem"
+          >
+            Based on Reactjs
+          </Typography>
+          <Box
+            width="90%"
+            padding="1rem"
+            display="flex"
+            gap="3rem"
+            justifyContent="space-evenly"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            {BasedOnReactJs.map((data) => (
+              <DialogProjects
+                key={data.id}
+                src={data.src}
+                title={data.title}
+                Imgsrc={data.Imgsrc}
+              />
+            ))}
+          </Box>
+        </Box>
+      )}
+    </Box>
+  </section>
   );
-}
+};
 
 export default Project;
