@@ -7,11 +7,11 @@ import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 import { useSelector } from "react-redux";
 import Skills from "./Components/Skills";
-import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Project from "./Components/Project";
 import Navbar from "./Components/Navbar";
 import Home from "./pages/Home";
+import Education from "./Components/Education";
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/skill" element={<Skills />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />

@@ -8,11 +8,16 @@ export const colorTokens2 = {
   purple4: "#9575DE",
   purple5: "#865DFF",
   logoColor: "#443C68",
-  bg1: "#18122B",
+  bg1: "#334257",
   bg2: "#403073",
-  White1: "#bdbdbd",
+  White1: "#F8E8EE",
   navWhite: "#d7d7d7",
-  grey: "#B4B4B3",
+  logoInDark:"#B4B4B3",
+  logoInLight:"#5C5470",
+  bgDark:"#343a40",
+  bgLight:"#fff",
+  heroDark:"#5C5470",
+  heroLight:"#E8E8E8",
 };
 
 //  export const boxshadow = {
@@ -78,6 +83,7 @@ export const themeSettings = (mode) => {
               main: colorTokens.primary[500],
               light: colorTokens.primary[800],
               purple: colorTokens.primary[1000],
+              logo:colorTokens2.logoInDark,
             },
             neutral: {
               dark: colorTokens.grey[100],
@@ -89,10 +95,11 @@ export const themeSettings = (mode) => {
               headMain: colorTokens2.purple5,
             },
             background: {
-              default: colorTokens.grey[900],
+              default: colorTokens2.heroDark,
               alt: colorTokens.grey[800],
               ctrl: colorTokens2.bg2,
               light: colorTokens2.bg1,
+              bgColor:colorTokens2.bgDark,
             },
           }
         : {
@@ -102,6 +109,7 @@ export const themeSettings = (mode) => {
               main: colorTokens.primary[500],
               light: colorTokens.primary[50],
               purple: colorTokens.primary[1000],
+              logo:colorTokens2.logoInLight,
             },
             neutral: {
               dark: colorTokens.grey[700],
@@ -113,10 +121,11 @@ export const themeSettings = (mode) => {
               headMain: colorTokens2.grey,
             },
             background: {
-              default: colorTokens.grey[10],
+              default:colorTokens2.heroLight,
               alt: colorTokens.grey[0],
               ctrl: colorTokens2.navWhite,
               light: colorTokens2.White1,
+              bgColor:colorTokens2.bgLight,
             },
           }),
     },

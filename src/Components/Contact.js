@@ -1,19 +1,20 @@
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import contact from "../Assets/animation_lo6o1xcy.json";
+
+import Lottie from "react-lottie-player";
 import {
   Box,
-  TextField,
   Typography,
   // useTheme,
-  Button,
   useMediaQuery,
 } from "@mui/material";
 import { fontTokens } from "../theme";
-import FlexBetween from "./FlexBetween";
-import svg from "../Assets/stacked-peaks-haikei.png";
-import { Link } from "react-router-dom";
-import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+// import FlexBetween from "./FlexBetween";
+// import { Link } from "react-router-dom";
+// import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+// import FlexBetween from "./FlexBetween";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -55,181 +56,94 @@ const Contact = () => {
     <section id="contact">
       <Box
         position="relative"
-        marginTop="5rem"
         padding="1rem 6%"
         width="100%"
-        minHeight="100vh"
+        height="auto"
         display="flex"
         alignItems="center"
+        justifyContent={"center"}
         flexDirection="column"
+        bgcolor="#343a40"
       >
         <Box>
           <Toaster />
         </Box>
-        <Typography
-          fontWeight="bold"
-          textAlign="center"
-          fontFamily={fontTokens.mulish}
-          fontSize="clamp(1rem, 2rem, 2.25rem)"
-          marginBottom="3rem"
-        >
-          Contact
-        </Typography>
-
         <Box
           display="flex"
           justifyContent="center"
           alignItems="center"
           width="90%"
         >
-          {isNonMobileScreens ? (
+          {isNonMobileScreens ?
+           (
             <Box
               display="flex"
-              justifyContent="space-evenly"
+              justifyContent="space-between"
               alignItems="center"
-              width="90%"
+              width="100%"
             >
               <Box
                 display="flex"
-                flexDirection="column"
-                alignItems="start"
+                alignItems="center"
                 justifyContent="center"
-                gap="2rem"
-                width="40%"
+                width="50%"
+                // bgcolor={"red"}
               >
-                <Box>
-                  <Typography
-                    width="100%"
-                    fontWeight="bold"
-                    textAlign="left"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Email :-
-                  </Typography>
-                  <Typography
-                    width="100%"
-                    fontWeight="medium"
-                    textAlign="left"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    hemantkumar0933@gmail.com
-                  </Typography>
-                </Box>
-
-                <FlexBetween flexDirection={"column"}>
-                  <Typography
-                    width="100%"
-                    fontWeight="bold"
-                    textAlign="left"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Location :-
-                  </Typography>
-                  <Typography
-                    width="100%"
-                    fontWeight="medium"
-                    textAlign="left"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Mount abu, Rajasthan
-                  </Typography>
-                  <Box
-                    width="130px"
-                    marginTop="1rem"
-                    display="flex"
-                    justifyContent="space-between"
-                  >
-                    <Link to="https://github.com/hemant0933">
-                      <GitHub
-                        sx={{
-                          fontSize: "38px",
-                          "&:hover": {
-                            color: "#fff",
-                          },
-                        }}
-                      />
-                    </Link>
-                    <Link to="https://www.linkedin.com/in/hemant-kumar-0a9b69bb/">
-                      <LinkedIn
-                        sx={{
-                          fontSize: "38px",
-                          "&:hover": {
-                            color: "#fff",
-                          },
-                        }}
-                      />
-                    </Link>
-                    <Link to="https://www.instagram.com/hemant00000000/">
-                      <Instagram
-                        sx={{
-                          fontSize: "38px",
-                          "&:hover": {
-                            color: "#fff",
-                          },
-                        }}
-                      />
-                    </Link>
-                  </Box>
-                </FlexBetween>
+                <Lottie
+                  play
+                  loop
+                  mode="normal"
+                  animationData={contact}
+                  className="w-full h-full "
+                />
               </Box>
               <form
                 style={{
-                  width: "50%",
+                  width: "45%",
+                  height:'400px',
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: "2rem",
-                  padding: "3rem",
+                  justifyContent:'center',
+                  gap: "1rem",
+                  padding: "1rem",
                   borderRadius: "20px",
+                  border:'1px solid gray',
                 }}
-                className="glass"
                 ref={form}
                 onSubmit={sendEmail}
               >
-                <TextField
-                  fullWidth
-                  label="Email"
+                <Typography
+                  textAlign="center"
                   fontFamily={fontTokens.mulish}
-                  type="text"
-                  id="email"
-                  name="from_name"
-                  style={{
-                    fontFamily: fontTokens.italiana,
-                    background: "white",
-                  }}
-                  onChange={(e) => setName(e.target.value)}
-                />
-
-                <textarea
-                  placeholder="Enter your message"
-                  name="message"
-                  id="textarea"
-                  onChange={(e) => setMessage(e.target.value)}
-                  style={{
-                    width: "100%",
-                    minHeight: "200px",
-                    padding: "0.8rem",
-                    fontSize: "0.9rem",
-                    fontFamily: fontTokens.mulish,
-                    background: "white",
-                  }}
-                />
-
-                <Button
-                  fullWidth
-                  sx={{ padding: "0.5rem", border: "1px solid white" }}
-                  type="submit"
+                  color={"white"}
+                  fontSize="clamp(1rem, 1.5rem, 2.5rem)"
+                  marginBottom={"20px"}
+                  style={{textDecoration:"underline pink wavy 1px"}}
                 >
-                  Submit
-                </Button>
+                  Get in Touch
+                </Typography>
+                
+                <div className="inputGroup">
+                  <input fontFamily={fontTokens.mulish} type="text" id="email"
+                    name="from_name"
+                    onChange={(e) => setName(e.target.value)}/>
+                  <label for="email">Email</label>
+                </div>
+
+                <div className="inputGroup">
+                  <input
+                    name="message"
+                    type="text"
+                    id="textarea"
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                  <label>Message</label>
+                </div>
+
+                <button className="submitBtn"  type="submit">
+                Submit
+              </button>
               </form>
             </Box>
           ) : (
@@ -240,7 +154,7 @@ const Contact = () => {
               flexDirection="column"
               width="100%"
             >
-              <Box
+              {/* <Box
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
@@ -330,69 +244,76 @@ const Contact = () => {
                     />
                   </Link>
                 </Box>
+              </Box> */}
+               <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                gap="2rem"
+                width="100%"
+              >
+                <Lottie
+                  play
+                  loop
+                  mode="normal"
+                  animationData={contact}
+                  className="w-full h-full "
+                />
               </Box>
+
               <form
                 style={{
-                  width: "100%",
+                  width: "90%",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: "2rem",
-                  padding: "3rem",
+                  gap: "1rem",
+                  padding: "2rem",
                   borderRadius: "20px",
+                  border:'1px solid gray',
                 }}
-                className="glass"
                 ref={form}
                 onSubmit={sendEmail}
               >
-                <TextField
-                  fullWidth
-                  label="Email"
+                 <Typography
+                  // fontWeight="bold"
+                  textAlign="center"
                   fontFamily={fontTokens.mulish}
-                  type="text"
-                  id="email"
-                  name="from_name"
-                  style={{
-                    fontFamily: fontTokens.italiana,
-                    background: "white",
-                  }}
-                  onChange={(e) => setName(e.target.value)}
-                />
-
-                <textarea
-                  placeholder="Enter your message"
-                  name="message"
-                  id="textarea"
-                  onChange={(e) => setMessage(e.target.value)}
-                  style={{
-                    width: "100%",
-                    minHeight: "200px",
-                    padding: "0.8rem",
-                    fontSize: "0.9rem",
-                    fontFamily: fontTokens.mulish,
-                    background: "white",
-                  }}
-                />
-
-                <Button
-                  fullWidth
-                  sx={{ padding: "0.5rem", border: "1px solid white" }}
-                  type="submit"
+                  color={"white"}
+                  style={{textDecoration:"underline pink wavy 2px"}}
+                  fontSize="clamp(1rem, 1.5rem, 2.5rem)"
                 >
-                  Submit
-                </Button>
+                  Get in Touch
+                </Typography>
+                
+                <div className="inputGroup">
+                  <input fontFamily={fontTokens.mulish} type="text" id="email"
+                    name="from_name"
+                    onChange={(e) => setName(e.target.value)}/>
+                  <label for="email">Email</label>
+                </div>
+
+                <div className="inputGroup">
+                  <input
+                    name="message"
+                    type="text"
+                    id="textarea"
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                  <label>Message</label>
+                </div>
+
+                <button className="submitBtn"  type="submit">
+                Submit
+              </button>
               </form>
+
+              {/* <FlexBetween>
+
+              </FlexBetween> */}
             </Box>
           )}
-        </Box>
-        <Box
-          width="100%"
-          height="100vh"
-          position="absolute"
-          zIndex="-1"
-          bottom="0"
-        >
-          <img src={svg} width="100%" height="100%" alt="svg" />
         </Box>
       </Box>
     </section>

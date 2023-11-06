@@ -7,16 +7,18 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { DarkMode, LightMode, Menu, Close } from "@mui/icons-material";
+import { DarkMode, LightMode, Close } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../state/themeSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 import { fontTokens } from "../theme";
+import 'remixicon/fonts/remixicon.css'
+
 
 const menuArray = [
   { label: "Home", url: "/" },
-  { label: "About", url: "/about" },
+  { label: "Education", url: "/education" },
   { label: "Project", url: "/project" },
   { label: "Skills", url: "/skill" },
   { label: "Contact", url: "/contact" },
@@ -32,8 +34,9 @@ const Navbar = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const dark = theme.palette.neutral.dark;
   const primaryLight = theme.palette.neutral.headMain;
-  const bglight = theme.palette.background.light;
-  const light = theme.palette.neutral.main;
+  // const logo1 = theme.palette.primary.dark.logo;
+  const logo = theme.palette.primary.logo;
+  const bgColor = theme.palette.background.bgColor;
 
   useEffect(() => {
     if (isMobileMenuToggled) {
@@ -52,17 +55,17 @@ const Navbar = () => {
  
 
   return (
-    <FlexBetween padding="1rem 6%" borderBottom="1px solid #e5dddf">
+    <FlexBetween padding="1rem 2%" bgcolor={bgColor} width="100%" zIndex="1000" position="fixed" borderBottom="1px solid #e5dddf">
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
-          fontFamily={fontTokens.italiana}
-          fontSize="clamp(1rem, 2rem, 2.25rem)"
-          color={primaryLight}
+          fontFamily={fontTokens.mulish}
+          fontSize="clamp(1rem, 2rem, 2.5rem)"
           onClick={() => navigate("/")}
+          color={logo}
           sx={{
             "&:hover": {
-              color: light,
+              color:{bgColor},
               cursor: "pointer",
             },
           }}
@@ -78,14 +81,13 @@ const Navbar = () => {
           {menuArray.map((item, i) => (
             <NavLink key={`${i}+${item.label}`} to={item.url}>
               <Typography
-                fontWeight="bold"
+                // fontWeight="bold"
                 fontFamily={fontTokens.mulish}
-                fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+                fontSize="clamp(1rem, 1.1rem, 1.5rem)"
                 color={primaryLight}
                 sx={{
                   padding: "10px",
                   borderRadius: "10px",
-
                   transition: "background-color 0.3s ease",
                   "&:hover": {
                     cursor: "pointer",
@@ -111,7 +113,7 @@ const Navbar = () => {
         <IconButton
           onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
         >
-          <Menu />
+         <i className="ri-menu-line"></i>
         </IconButton>
       )}
 
@@ -119,13 +121,14 @@ const Navbar = () => {
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
           position="fixed"
+          top="0"
           right="0"
           bottom="0"
-          height="100%"
+          height="80%"
           zIndex="10"
           maxWidth="400px"
           minWidth="200px"
-          backgroundColor={bglight}
+          backgroundColor={bgColor}
           ref={boxRef}
           
         >
@@ -144,21 +147,21 @@ const Navbar = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
-            gap="3rem"
+            gap="2rem"
           >
             {menuArray.map((item, i) => (
               <NavLink key={`${i}+${item.label}`} to={item.url}>
                 <Typography
-                  fontWeight="bold"
+                  // fontWeight="bold"
                   fontFamily={fontTokens.mulish}
-                  fontSize="clamp(1rem, 1.2rem, 2.25rem)"
+                  fontSize="clamp(1rem, 1.1rem, 1.5rem)"
                   sx={{
                     padding: "10px", // Add padding so the background doesn't touch the text
                     borderRadius: "10px", // Add border radius
                     transition: "background-color 0.3s ease", // Add transition for a smooth hover effect
                     "&:hover": {
                       cursor: "pointer",
-                      backgroundColor: "#E5B8F4", // Change background color on hover
+                      textDecoration: "#E5B8F4", 
                     },
                   }}
                 >

@@ -10,10 +10,9 @@ const Project = () => {
   const projectRef = useRef(null);
 
   return (
-  <section id="project">
+  <section id="project" style={{paddingTop:'120px'}}>
       <Box
         position="relative"
-        marginTop="5rem"
         padding="1rem 6%"
         width="100%"
         height="auto"
