@@ -11,16 +11,12 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { fontTokens } from "../theme";
-// import FlexBetween from "./FlexBetween";
-// import { Link } from "react-router-dom";
-// import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
-// import FlexBetween from "./FlexBetween";
+import { Link } from "react-router-dom";
+import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  // const theme = useTheme();
-  // const backgroundColor = theme.palette.background.ctrl;
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const form = useRef();
@@ -56,7 +52,7 @@ const Contact = () => {
     <section id="contact">
       <Box
         position="relative"
-        padding="1rem 6%"
+        padding="2.3rem 6%"
         width="100%"
         height="auto"
         display="flex"
@@ -68,14 +64,14 @@ const Contact = () => {
         <Box>
           <Toaster />
         </Box>
+
         <Box
           display="flex"
           justifyContent="center"
           alignItems="center"
           width="90%"
         >
-          {isNonMobileScreens ?
-           (
+          {isNonMobileScreens ? (
             <Box
               display="flex"
               justifyContent="space-between"
@@ -87,7 +83,6 @@ const Contact = () => {
                 alignItems="center"
                 justifyContent="center"
                 width="50%"
-                // bgcolor={"red"}
               >
                 <Lottie
                   play
@@ -100,15 +95,15 @@ const Contact = () => {
               <form
                 style={{
                   width: "45%",
-                  height:'400px',
+                  height: "400px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent:'center',
+                  justifyContent: "center",
                   gap: "1rem",
                   padding: "1rem",
                   borderRadius: "20px",
-                  border:'1px solid gray',
+                  border: "1px solid gray",
                 }}
                 ref={form}
                 onSubmit={sendEmail}
@@ -119,15 +114,19 @@ const Contact = () => {
                   color={"white"}
                   fontSize="clamp(1rem, 1.5rem, 2.5rem)"
                   marginBottom={"20px"}
-                  style={{textDecoration:"underline pink wavy 1px"}}
+                  style={{ textDecoration: "underline pink wavy 1px" }}
                 >
                   Get in Touch
                 </Typography>
-                
+
                 <div className="inputGroup">
-                  <input fontFamily={fontTokens.mulish} type="text" id="email"
+                  <input
+                    fontFamily={fontTokens.mulish}
+                    type="text"
+                    id="email"
                     name="from_name"
-                    onChange={(e) => setName(e.target.value)}/>
+                    onChange={(e) => setName(e.target.value)}
+                  />
                   <label for="email">Email</label>
                 </div>
 
@@ -141,9 +140,9 @@ const Contact = () => {
                   <label>Message</label>
                 </div>
 
-                <button className="submitBtn"  type="submit">
-                Submit
-              </button>
+                <button className="submitBtn" type="submit">
+                  Submit
+                </button>
               </form>
             </Box>
           ) : (
@@ -207,45 +206,9 @@ const Contact = () => {
                     Mount abu, Rajasthan
                   </Typography>
                 </Box>
-                <Box
-                  width="60%"
-                  marginTop="1rem"
-                  display="flex"
-                  justifyContent="space-between"
-                >
-                  <Link to="https://github.com/hemant0933">
-                    <GitHub
-                      sx={{
-                        fontSize: "38px",
-                        "&:hover": {
-                          color: "#865DFF",
-                        },
-                      }}
-                    />
-                  </Link>
-                  <Link to="https://www.linkedin.com/in/hemant-kumar-0a9b69bb/">
-                    <LinkedIn
-                      sx={{
-                        fontSize: "38px",
-                        "&:hover": {
-                          color: "#865DFF",
-                        },
-                      }}
-                    />
-                  </Link>
-                  <Link to="https://www.instagram.com/hemant00000000/">
-                    <Instagram
-                      sx={{
-                        fontSize: "38px",
-                        "&:hover": {
-                          color: "#865DFF",
-                        },
-                      }}
-                    />
-                  </Link>
-                </Box>
+                
               </Box> */}
-               <Box
+              <Box
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
@@ -271,26 +234,30 @@ const Contact = () => {
                   gap: "1rem",
                   padding: "2rem",
                   borderRadius: "20px",
-                  border:'1px solid gray',
+                  border: "1px solid gray",
                 }}
                 ref={form}
                 onSubmit={sendEmail}
               >
-                 <Typography
+                <Typography
                   // fontWeight="bold"
                   textAlign="center"
                   fontFamily={fontTokens.mulish}
                   color={"white"}
-                  style={{textDecoration:"underline pink wavy 2px"}}
+                  style={{ textDecoration: "underline pink wavy 2px" }}
                   fontSize="clamp(1rem, 1.5rem, 2.5rem)"
                 >
                   Get in Touch
                 </Typography>
-                
+
                 <div className="inputGroup">
-                  <input fontFamily={fontTokens.mulish} type="text" id="email"
+                  <input
+                    fontFamily={fontTokens.mulish}
+                    type="text"
+                    id="email"
                     name="from_name"
-                    onChange={(e) => setName(e.target.value)}/>
+                    onChange={(e) => setName(e.target.value)}
+                  />
                   <label for="email">Email</label>
                 </div>
 
@@ -304,16 +271,49 @@ const Contact = () => {
                   <label>Message</label>
                 </div>
 
-                <button className="submitBtn"  type="submit">
-                Submit
-              </button>
+                <button className="submitBtn" type="submit">
+                  Submit
+                </button>
               </form>
-
-              {/* <FlexBetween>
-
-              </FlexBetween> */}
             </Box>
           )}
+        </Box>
+        <Box
+          width="200px"
+          marginTop="2rem"
+          display="flex"
+          justifyContent="space-between"
+        >
+          <Link to="https://github.com/hemant0933">
+            <GitHub
+              sx={{
+                fontSize: "38px",
+                "&:hover": {
+                  color: "#865DFF",
+                },
+              }}
+            />
+          </Link>
+          <Link to="https://www.linkedin.com/in/hemant-kumar-0a9b69bb/">
+            <LinkedIn
+              sx={{
+                fontSize: "38px",
+                "&:hover": {
+                  color: "#865DFF",
+                },
+              }}
+            />
+          </Link>
+          <Link to="https://www.instagram.com/hemant00000000/">
+            <Instagram
+              sx={{
+                fontSize: "38px",
+                "&:hover": {
+                  color: "#865DFF",
+                },
+              }}
+            />
+          </Link>
         </Box>
       </Box>
     </section>

@@ -19,14 +19,13 @@ const Project = () => {
         display="flex"
         alignItems="center"
         flexDirection="column"
-        // justifyContent="center"
     >
       <Typography
         fontWeight="bold"
         textAlign="center"
         fontFamily={fontTokens.mulish}
         fontSize="clamp(1rem, 2rem, 2.25rem)"
-        // marginBottom="3rem"
+        marginBottom="3rem"
       >
         Project
       </Typography>

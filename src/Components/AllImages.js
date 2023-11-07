@@ -1,6 +1,6 @@
 import swiggy from '../Assets/swiggy-clone.png';
 import flipkart from '../Assets/flipkart-clone.png';
-import pexel from  '../Assets/pexel.png';
+import pexel from  '../Assets/pexel.jpg';
 import tic from '../Assets/tic-ta-toe.png' ;
 import connect from '../Assets/connect.png';
 import meshop from '../Assets/meshop.png';

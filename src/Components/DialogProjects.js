@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-// import { motion} from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import Dialog from "@mui/material/Dialog";
-// import { motion } from "framer-motion";
-// import { navVariants} from "../utils/motion";
-import { Box, Typography, useTheme } from "@mui/material";
+import VanillaTilt from 'vanilla-tilt';
+import { Box, Typography } from "@mui/material";
 import { fontTokens } from "../theme";
 
 const DialogProjects = ({ src, Imgsrc, title }) => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState("xl");
-  const theme = useTheme();
-  const borderColor = theme.palette.neutral.headMain;
-  // const borderColor = theme.palette.mode
+  const card = useRef('null');
+
 
   const handleOpen = () => {
     setOpen(true);
@@ -25,16 +22,25 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
   const changeSize = () => {
     if (size === "xl") setSize("md");
     else setSize("xl");
-  };
+  }
+
+  useEffect(() => {
+    let element = card.current;
+    VanillaTilt.init(element,{
+      max:25,
+      speed:400,
+      glare:true,
+      "max-glare":0.5,
+      transition:true,
+      easing:"cubic-bezier(.03,.98,.52,.99)",
+    })
+  },[])
+
 
   return (
-    <Box width="325px" height="260px" sx={{
-      border:`1px solid ${borderColor}`
-    }}
-    display="flex" 
-    flexDirection="column" 
-    alignItems="center"  
-    justifyContent="space-around">
+    <Box
+    ref={card}
+    className="card">
       <Typography
          fontWeight="medium"
          textAlign="center"

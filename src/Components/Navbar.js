@@ -124,10 +124,9 @@ const Navbar = () => {
           top="0"
           right="0"
           bottom="0"
-          height="80%"
+          height="70%"
           zIndex="10"
-          maxWidth="400px"
-          minWidth="200px"
+          width={"200px"}
           backgroundColor={bgColor}
           ref={boxRef}
           
@@ -146,21 +145,26 @@ const Navbar = () => {
             display="flex"
             flexDirection="column"
             justifyContent="center"
-            alignItems="center"
-            gap="2rem"
+            padding={"0 1rem"}
+            // alignItems="center"
+            gap="1.5rem"
+            sx={{
+              marginX:"auto"
+            }}
           >
             {menuArray.map((item, i) => (
               <NavLink key={`${i}+${item.label}`} to={item.url}>
                 <Typography
-                  // fontWeight="bold"
+                   width={"100%"}
                   fontFamily={fontTokens.mulish}
                   fontSize="clamp(1rem, 1.1rem, 1.5rem)"
                   sx={{
-                    padding: "10px", // Add padding so the background doesn't touch the text
-                    borderRadius: "10px", // Add border radius
-                    transition: "background-color 0.3s ease", // Add transition for a smooth hover effect
+                    padding: "10px",
+                    borderRadius: "10px",
+                    transition: "background-color 0.3s ease",
                     "&:hover": {
                       cursor: "pointer",
+                      bgcolor:"gray",
                       textDecoration: "#E5B8F4", 
                     },
                   }}

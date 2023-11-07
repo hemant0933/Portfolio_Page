@@ -1,20 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { fontTokens } from "../theme";
 import FOG from 'vanta/dist/vanta.fog.min'
-// Make sure window.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
+
 
 
 const HerosSection = () => {
-  // const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
-  const theme = useTheme();
   const [vantaEffect, setVantaEffect] = useState(null)
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-  const primaryLight = theme.palette.neutral.headMain;
-  const light = theme.palette.primary.dark;
-
-
   const myRef = useRef(null);
+
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -23,9 +18,12 @@ const HerosSection = () => {
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        highlightColor: 0xe3ff,
-        midtoneColor: 0xfb07fc,
-        speed: 1.50
+        highlightColor: 0x8aaff,
+        midtoneColor: 0xff1f00,
+        lowlightColor:0x2d00ff,
+        baseColor:0xffebeb,
+        blurFactor:0.6,
+        speed: 1
       }))
     }
     return () => {
@@ -33,8 +31,9 @@ const HerosSection = () => {
     }
   }, [vantaEffect])
 
+
   return (
-    <section ref={myRef} id="/">
+    <section ref={myRef} style={{position:"relative"}} id="/">
       <Box
         position="relative"
         width="100%"
@@ -58,10 +57,9 @@ const HerosSection = () => {
               fontFamily={fontTokens.mulish}
               color={"black"}
               fontSize="clamp(5rem, 2rem, 2.25rem)"
-              
             >
-              <span className="Lora">
-                Hi. I'm Hemant.<br/>
+              <span  className="Lora">
+                Hi. I'm Hemant.
                 I am into Web Development.
               </span>
             </Typography>
@@ -71,8 +69,6 @@ const HerosSection = () => {
                 textAlign="center"
                 fontFamily={fontTokens.mulish}
                 fontSize="clamp(0.5rem, 1rem, 1.5rem)"
-                color={"white"}
-                className="stroke"
                 marginTop={"30px"}
               >
                 Bridging design and technology for seamless user-centric
@@ -97,7 +93,7 @@ const HerosSection = () => {
               fontSize="clamp(1rem, 3.2rem, 3.25rem)"
               >
               <span className="Lora">
-                Hi. I'm Hemant.<br/>
+                Hi. I'm Hemant.
                 I am into Web Development.
               </span>
             </Typography>
@@ -106,8 +102,6 @@ const HerosSection = () => {
                 fontFamily={fontTokens.mulish}
                 textAlign="center"
                 fontSize="clamp(0.5rem, 1rem, 2.25rem)"
-                color={"white"}
-                className="stroke"
               >
                 Bridging design and technology for seamless user-centric
                 experiences.

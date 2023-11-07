@@ -59,9 +59,9 @@ const { swiggy, flipkart,FitnessWeb,Social,NikeShoeWeb, pexel, tic, connect, mes
     },
     {
       id: 3,
-      src: "https://main--funny-bunny-ecd8ca.netlify.app/",
+      src: "https://image-gallery-three-jet.vercel.app/",
       Imgsrc: pexel,
-      title: "Image Searcher",
+      title: "Pexel Clone",
     },
     {
       id: 4,
@@ -76,5 +76,4 @@ const { swiggy, flipkart,FitnessWeb,Social,NikeShoeWeb, pexel, tic, connect, mes
       Imgsrc: imdb,
       title: "IMDB Clone",
     },
-   
   ];

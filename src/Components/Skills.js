@@ -48,19 +48,15 @@ const Skills = () => {
   const primaryLight = theme.palette.neutral.headMain;
 
   return (
-    <section id="skill">
+    <section>
       <Box
         width="100%"
-        height="100vh"
         display="flex"
         alignItems="center"
         flexDirection="column"
         padding="1rem 6%"
         textAlign="center"
         id="skill"
-        sx={{
-          backgroundColor: "#8DDFCB",
-        }}
       >
         {isNonMobileScreens ? (
           <Box
@@ -70,6 +66,7 @@ const Skills = () => {
             justifyContent="center"
             alignItems="center"
             gap="3rem"
+            paddingTop={"100px"}
           >
             <Typography
               fontWeight="bold"
@@ -82,13 +79,13 @@ const Skills = () => {
             <Typography
               textAlign="left"
               fontFamily={fontTokens.mulish}
-              fontSize="clamp(0.8rem, 1.6rem, 2.25rem)"
+              fontSize="clamp(0.8rem, 1.2rem, 2.25rem)"
               color={primaryLight}
             >
               Development Skills and Tools
             </Typography>
 
-            <Box width="100%">
+            <Box>
               <Slider IconArray={IconArray} />
             </Box>
           </Box>
@@ -100,7 +97,7 @@ const Skills = () => {
             justifyContent="space-evenly"
             alignItems="center"
             flexDirection="column"
-            marginTop="2rem"
+            marginTop="6rem"
           >
             <Typography
               fontWeight="bold"
@@ -124,10 +121,22 @@ const Skills = () => {
               justifyContent="center"
               flexWrap="wrap"
               alignItems="center"
-              marginTop="1rem"
+              marginTop="3rem"
+              gap={"35px"}
             >
               {IconArray.map((icon, index) => (
-                <Box padding="1rem" width="80px" height="80px">
+                <Box 
+                  className="skillcard" 
+                  padding="1rem" 
+                  width="80px" 
+                  height="80px"
+                  sx={{
+                    transition:'transform 0.2s',
+                    '&:hover':{
+                      transform:'scale(1.2)'
+                    }
+                  }}
+                  >
                   <img
                     key={index}
                     width="100%"
