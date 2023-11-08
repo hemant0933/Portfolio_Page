@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { fontTokens } from "../theme";
-import FOG from 'vanta/dist/vanta.fog.min'
-
-
+import FOG from 'vanta/dist/vanta.fog.min';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const HerosSection = () => {
   const [vantaEffect, setVantaEffect] = useState(null)
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const myRef = useRef(null);
+  const textAnimation = useRef(null);
+  const smalltextAnimation = useRef(null);
 
 
   useEffect(() => {
@@ -32,12 +34,29 @@ const HerosSection = () => {
   }, [vantaEffect])
 
 
+  useEffect(() => {
+    textAnimation.current = AOS.init({
+      duration:1000,
+      easing:"ease-in-out",
+      // offset:200,
+      once:false,
+    })
+
+    smalltextAnimation.current = AOS.init({
+      duration:500,
+      easing:"ease-in-out",
+      // offset:200,
+      once:false,
+    })
+  },[])
+
+
   return (
-    <section ref={myRef} style={{position:"relative"}} id="/">
+    <section ref={myRef} style={{position:"relative",width:'100%',height:'100vh'}} id="/">
       <Box
         position="relative"
         width="100%"
-        height="100vh"
+        height="100%"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -57,8 +76,9 @@ const HerosSection = () => {
               fontFamily={fontTokens.mulish}
               color={"black"}
               fontSize="clamp(5rem, 2rem, 2.25rem)"
+              data-aos="fade-up" ref={textAnimation}
             >
-              <span  className="Lora">
+              <span className="Lora">
                 Hi. I'm Hemant.
                 I am into Web Development.
               </span>
@@ -70,6 +90,8 @@ const HerosSection = () => {
                 fontFamily={fontTokens.mulish}
                 fontSize="clamp(0.5rem, 1rem, 1.5rem)"
                 marginTop={"30px"}
+                ref={smalltextAnimation}
+                data-aos="fade-up"
               >
                 Bridging design and technology for seamless user-centric
                 experiences.
@@ -92,7 +114,7 @@ const HerosSection = () => {
               color={"white"}
               fontSize="clamp(1rem, 3.2rem, 3.25rem)"
               >
-              <span className="Lora">
+              <span data-aos="fade-up" ref={textAnimation} className="Lora">
                 Hi. I'm Hemant.
                 I am into Web Development.
               </span>
@@ -102,6 +124,8 @@ const HerosSection = () => {
                 fontFamily={fontTokens.mulish}
                 textAlign="center"
                 fontSize="clamp(0.5rem, 1rem, 2.25rem)"
+                data-aos="fade-up"
+                ref={textAnimation}
               >
                 Bridging design and technology for seamless user-centric
                 experiences.

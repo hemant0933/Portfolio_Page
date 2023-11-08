@@ -1,13 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import contact from "../Assets/animation_lo6o1xcy.json";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 import Lottie from "react-lottie-player";
 import {
   Box,
   Typography,
-  // useTheme,
   useMediaQuery,
 } from "@mui/material";
 import { fontTokens } from "../theme";
@@ -20,6 +21,7 @@ const Contact = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const form = useRef();
+  const leftAnimate = useRef(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -48,8 +50,17 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    leftAnimate.current = AOS.init({
+      duration:1000,
+      easing:"ease-in-sine",
+      offset:300,
+      once:false,
+    })
+  },[])
+
   return (
-    <section id="contact">
+    <section id="contact" style={{width:'100%',height:'100vh'}}>
       <Box
         position="relative"
         padding="2.3rem 6%"
@@ -59,7 +70,6 @@ const Contact = () => {
         alignItems="center"
         justifyContent={"center"}
         flexDirection="column"
-        bgcolor="#343a40"
       >
         <Box>
           <Toaster />
@@ -83,13 +93,15 @@ const Contact = () => {
                 alignItems="center"
                 justifyContent="center"
                 width="50%"
+                ref={leftAnimate}
+                data-aos="fade-right"
               >
                 <Lottie
                   play
                   loop
                   mode="normal"
                   animationData={contact}
-                  className="w-full h-full "
+                  className="w-full h-full"
                 />
               </Box>
               <form
@@ -104,7 +116,9 @@ const Contact = () => {
                   padding: "1rem",
                   borderRadius: "20px",
                   border: "1px solid gray",
+                  background:"#343a40"
                 }}
+                data-aos="fade-left"
                 ref={form}
                 onSubmit={sendEmail}
               >
@@ -153,61 +167,6 @@ const Contact = () => {
               flexDirection="column"
               width="100%"
             >
-              {/* <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                gap="2rem"
-                width="100%"
-              >
-                <Box>
-                  <Typography
-                    width="100%"
-                    fontWeight="bold"
-                    textAlign="center"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Email :-
-                  </Typography>
-                  <Typography
-                    width="100%"
-                    fontWeight="medium"
-                    textAlign="center"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    hemantkumar0933@gmail.com
-                  </Typography>
-                </Box>
-
-                <Box>
-                  <Typography
-                    width="100%"
-                    fontWeight="bold"
-                    textAlign="center"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Location :-
-                  </Typography>
-                  <Typography
-                    width="100%"
-                    fontWeight="medium"
-                    textAlign="center"
-                    fontFamily={fontTokens.annie}
-                    fontSize="clamp(1rem, 1.2rem, 2.25rem)"
-                    //  padding="1rem"
-                  >
-                    Mount abu, Rajasthan
-                  </Typography>
-                </Box>
-                
-              </Box> */}
               <Box
                 display="flex"
                 flexDirection="column"
@@ -235,12 +194,12 @@ const Contact = () => {
                   padding: "2rem",
                   borderRadius: "20px",
                   border: "1px solid gray",
+                  background:"#343a40"
                 }}
                 ref={form}
                 onSubmit={sendEmail}
               >
                 <Typography
-                  // fontWeight="bold"
                   textAlign="center"
                   fontFamily={fontTokens.mulish}
                   color={"white"}

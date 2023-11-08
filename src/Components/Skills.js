@@ -44,7 +44,6 @@ const IconArray = [
 const Skills = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-  // const background = theme.palette.background.alt;
   const primaryLight = theme.palette.neutral.headMain;
 
   return (

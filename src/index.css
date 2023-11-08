@@ -22,9 +22,6 @@ body,
   height: 100%;
   font-family: var(--font-family-work-sans);
   scroll-behavior: smooth;
-  margin-bottom: 80px;
-  /* background: #343a40; */
-  /* background: #99EEFD; */
 }
 a {
   text-decoration: none;
