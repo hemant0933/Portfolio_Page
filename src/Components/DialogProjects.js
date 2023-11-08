@@ -3,21 +3,23 @@ import Dialog from "@mui/material/Dialog";
 import VanillaTilt from 'vanilla-tilt';
 import { Box, Typography } from "@mui/material";
 import { fontTokens } from "../theme";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const DialogProjects = ({ src, Imgsrc, title }) => {
-  const [open, setOpen] = useState(false);
-  const [size, setSize] = useState("xl");
-  const card = useRef('null');
+  const [open, setOpen] = useState(false)
+  const [size, setSize] = useState("xl")
+  const card = useRef("null")
 
 
   const handleOpen = () => {
     setOpen(true);
     setSize("xl");
-  };
+  }
 
   const handleClose = () => {
     setOpen(false);
-  };
+  }
 
   const changeSize = () => {
     if (size === "xl") setSize("md");
@@ -34,13 +36,24 @@ const DialogProjects = ({ src, Imgsrc, title }) => {
       transition:true,
       easing:"cubic-bezier(.03,.98,.52,.99)",
     })
+
+    element = AOS.init({
+      duration:3000,
+      easing:"ease",
+      // offset:100,
+      once:false
+  })
   },[])
+
+
+
 
 
   return (
     <Box
-    ref={card}
-    className="card">
+      ref={card}
+      data-aos="fade-up"
+      className="card">
       <Typography
          fontWeight="medium"
          textAlign="center"

@@ -4,6 +4,7 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import { fontTokens } from "../theme";
 import { BasedOnHtmlAndCss, BasedOnJs, BasedOnReactJs } from "../Constants";
 
+
 const Project = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
@@ -115,7 +116,6 @@ const Project = () => {
             justifyContent="space-evenly"
             alignItems="center"
             flexWrap="wrap"
-            // marginBottom="160px"
           >
             {BasedOnReactJs.map((data) => (
               <DialogProjects

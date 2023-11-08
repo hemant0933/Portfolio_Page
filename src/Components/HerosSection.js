@@ -114,7 +114,7 @@ const HerosSection = () => {
               color={"white"}
               fontSize="clamp(1rem, 3.2rem, 3.25rem)"
               >
-              <span data-aos="fade-up" ref={textAnimation} className="Lora">
+              <span ref={textAnimation} className="Lora">
                 Hi. I'm Hemant.
                 I am into Web Development.
               </span>
@@ -126,6 +126,7 @@ const HerosSection = () => {
                 fontSize="clamp(0.5rem, 1rem, 2.25rem)"
                 data-aos="fade-up"
                 ref={textAnimation}
+                marginTop={"20px"}
               >
                 Bridging design and technology for seamless user-centric
                 experiences.

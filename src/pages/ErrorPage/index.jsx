@@ -16,7 +16,6 @@ const ErrorPage = () => {
           mode="normal"
           animationData={ErrorLottie}
           className='errorLottie'
-          // style={{background:'current'}}
         />
       </div>
     </Box>

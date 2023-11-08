@@ -6,8 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
 import Lottie from "react-lottie-player";
-import {
-  Box,
+import { Box,
   Typography,
   useMediaQuery,
 } from "@mui/material";
@@ -174,6 +173,7 @@ const Contact = () => {
                 justifyContent="center"
                 gap="2rem"
                 width="100%"
+                data-aos="fade-up"
               >
                 <Lottie
                   play
@@ -196,6 +196,7 @@ const Contact = () => {
                   border: "1px solid gray",
                   background:"#343a40"
                 }}
+                data-aos="fade-up"
                 ref={form}
                 onSubmit={sendEmail}
               >
