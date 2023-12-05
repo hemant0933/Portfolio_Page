@@ -4,6 +4,7 @@ import { fontTokens } from "../theme";
 import FOG from 'vanta/dist/vanta.fog.min';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import avatar from '../Assets/avatar.jpg';
 
 const HerosSection = () => {
   const [vantaEffect, setVantaEffect] = useState(null)
@@ -84,6 +85,9 @@ const HerosSection = () => {
               </span>
             </Typography>
 
+           <Box width={100} height={100} display={'flex'} mx={'auto'}>
+            <img src={avatar} width="100%"  height="100%" style={{objectFit:"contain",borderRadius:"100%"}} alt="hemant" />
+           </Box>
             <Box>
               <Typography
                 textAlign="center"

@@ -27,13 +27,12 @@ const Certificates = ({imgData}) => {
              <img src={item.label} width={"100%"} onClick={() => handleOpen(item.label)} height={"100%"} alt='certification' />
            </Box>
 
-           <Dialog
-             open={open}
-             onClose={handleClose}
-            >
+             <Dialog
+              open={open}
+              onClose={handleClose}
+              >
              <img src={selectedImage} alt="Selected Certificate" style={{ width: '100%', height: 'auto' }} />
              </Dialog>
-           
            </>
         ))
       }

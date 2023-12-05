@@ -12,6 +12,7 @@ import Project from "./Components/Project";
 import Navbar from "./Components/Navbar";
 import Home from "./pages/Home";
 import Education from "./Components/Education";
+import Game from "./Components/Game";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/skill" element={<Skills />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/game" element={<Game />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </ThemeProvider>
